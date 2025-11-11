@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?><androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Gestion_Semestres_Admin">
+
+    <!-- ENCABEZADO FIJO -->
+    <ImageView
+        android:id="@+id/imgEncabezado"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/encabezado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- BARRA DE TÍTULO -->
+    <FrameLayout
+        android:id="@+id/contenedorTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="-30dp"
+        android:background="#000080"
+        app:layout_constraintTop_toBottomOf="@+id/imgEncabezado">
+        <!-- Contenido del FrameLayout -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/txtTituloPrincipal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gestión de Semestres Cursados"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/txtSubtitulo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+            <TextView
+                android:id="@+id/txtSubtitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sistema de Actividades Extraescolares ITVE"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/txtTituloPrincipal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+
+    <!-- LOGOS -->
+    <ImageView
+        android:id="@+id/imgSepLogo"
+        android:layout_width="153dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/sep_logo"
+        app:layout_constraintBottom_toTopOf="@id/contenedorTitulo"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Título "Historial de Semestres" -->
+
+    <ImageView
+        android:id="@+id/imgLogoItve"
+        android:layout_width="151dp"
+        android:layout_height="53dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/logo_itve"
+        app:layout_constraintBottom_toTopOf="@id/contenedorTitulo"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgTecnmLogo"
+        android:layout_width="59dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/tecnm_logo"
+        app:layout_constraintBottom_toTopOf="@id/contenedorTitulo"
+        app:layout_constraintEnd_toStartOf="@id/imgLogoItve"
+        app:layout_constraintHorizontal_bias="0.411"
+        app:layout_constraintStart_toEndOf="@id/imgSepLogo" />
+
+    <TextView
+        android:id="@+id/txtTituloHistorial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Historial de Semestres"
+        android:textColor="#000080"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contenedorTitulo" />
+
+    <!-- Descripción -->
+    <TextView
+        android:id="@+id/txtDescripcion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="En esta sección puede administrar los diferentes periodos académicos del Instituto Tecnológico del Valle de Etla."
+        android:textColor="#333333"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTituloHistorial" />
+
+    <!--
+        ======================= TARJETA LISTA PARA QUE LA MUEVAS =======================
+        Observa los cambios:
+        1. Anclada arriba a 'contenedorTitulo' y abajo a 'contenedorPie'.
+        2. Un 'layout_constraintVertical_bias' añadido para que puedas ajustarlo.
+        ¡Ahora puedes deslizarla verticalmente en el editor visual!
+    -->
+    <!-- ======================= FIN DE LA TARJETA ======================= -->
+
+    <!-- PIE DE PÁGINA -->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardSemestre"
+        android:layout_width="369dp"
+        android:layout_height="248dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#FFFFFF"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="5dp"
+        app:layout_constraintBottom_toTopOf="@id/contenedorPie"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contenedorTitulo"
+        app:layout_constraintVertical_bias="0.478"> <!-- ¡JUEGA CON ESTE VALOR (0.0 a 1.0)! -->
+
+        <!-- El contenido interno de la tarjeta no cambia -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/txtEncabezadoCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#000080"
+                android:padding="8dp"
+                android:text="Enero - Junio 2025"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtFechaInicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="16dp"
+                android:text="Fecha inicio: 30/01/2025"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtEncabezadoCard" />
+
+            <TextView
+                android:id="@+id/txtFechaFin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="8dp"
+                android:text="Fecha fin: 18/06/2025"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtFechaInicio" />
+
+            <TextView
+                android:id="@+id/txtAlumnos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="8dp"
+                android:text="Alumnos: 245"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtFechaFin" />
+
+            <TextView
+                android:id="@+id/txtActividades"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="8dp"
+                android:text="Actividades: 12"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtAlumnos" />
+
+            <Button
+                android:id="@+id/btnEditar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#FFA500"
+                android:textSize="12sp"
+                android:text="Editar"
+                android:textColor="@android:color/white"
+                app:layout_constraintEnd_toStartOf="@id/btnEliminar"
+                app:layout_constraintTop_toBottomOf="@id/txtActividades" />
+
+            <Button
+                android:id="@+id/btnEliminar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="#FF0000"
+                android:textSize="12sp"
+                android:text="Eliminar"
+                android:textColor="@android:color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtActividades" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <FrameLayout
+        android:id="@+id/contenedorPie"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#000080"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="© 2025 Instituto Tecnológico del Valle de Etla. Todos los derechos reservados."
+            android:textColor="@android:color/white"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
