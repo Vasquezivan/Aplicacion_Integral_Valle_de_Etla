@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Administrador.Union_Hidalgo">
+
+
+
+    <!-- Imagen de encabezado -->
+    <ImageView
+        android:id="@+id/imgEncabezado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/encabezado"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/contenedorTitulo" />
+
+    <!-- Logo SEP -->
+    <ImageView
+        android:id="@+id/imgSepLogo"
+        android:layout_width="153dp"
+        android:layout_height="88dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="Logo SEP"
+        android:scaleType="fitCenter"
+        android:src="@drawable/sep_logo"
+        app:layout_constraintBottom_toBottomOf="@id/imgEncabezado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imgEncabezado" />
+    <!-- Logo TecNM -->
+    <ImageView
+        android:id="@+id/imgTecnmLogo"
+        android:layout_width="59dp"
+        android:layout_height="38dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="Logo TecNM"
+        android:scaleType="fitCenter"
+        android:src="@drawable/tecnm_logo"
+        app:layout_constraintBottom_toBottomOf="@id/imgEncabezado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imgEncabezado"
+        app:layout_constraintVertical_bias="0.483" />
+    <!-- Logo ITVE -->
+    <ImageView
+        android:id="@+id/imgLogoItve"
+        android:layout_width="151dp"
+        android:layout_height="53dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="Logo ITVE"
+        android:scaleType="fitCenter"
+        android:src="@drawable/logo_itve"
+        app:layout_constraintBottom_toBottomOf="@id/imgEncabezado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.903"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imgEncabezado"
+        app:layout_constraintVertical_bias="0.467" />
+
+    <FrameLayout
+        android:id="@+id/contenedorTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#000080"
+        app:layout_constraintBottom_toTopOf="@+id/contenedorPie"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgEncabezado"
+        app:layout_constraintVertical_bias="0.201">
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/contenedorPie"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#000080"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Texto blanco encima -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="© 2025 Instituto Tecnológico del Valle de Etla. Todos los derechos reservados."
+            android:textColor="@android:color/white"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
