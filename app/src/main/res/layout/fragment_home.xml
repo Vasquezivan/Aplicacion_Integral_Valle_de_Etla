@@ -6,17 +6,60 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-    <TextView
-        android:id="@+id/text_home"
+
+
+    <!-- Imagen de encabezado -->
+
+    <ImageView
+        android:id="@+id/imgEncabezado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/encabezado"
+        app:layout_constraintBottom_toTopOf="@+id/contenedorPie"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <FrameLayout
+        android:id="@+id/contenedorTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#000080"
+        app:layout_constraintBottom_toTopOf="@+id/contenedorPie"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgEncabezado"
+        app:layout_constraintVertical_bias="0.201">
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/contenedorPie"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#000080"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Texto blanco encima -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="© 2025 Instituto Tecnológico del Valle de Etla. Todos los derechos reservados."
+            android:textColor="@android:color/white"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
