@@ -212,7 +212,7 @@
             android:gravity="center"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
-            android:text="© 2025 Instituto Tecnológico del Valle de Etla. Todos los derechos reservados."
+            android:text="© 2025 Instituto Tecnológico del Valle de Etla. Todos los derechos aun reservados."
             android:textColor="@android:color/white"
             android:textSize="11sp"
             android:textStyle="bold" />
