@@ -12,15 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Plataforma_Extraescolares">
         <activity
+            android:name=".ui.Administrador.Actividades_Union_Hidalgo"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="true"
             android:theme="@style/Theme.Plataforma_Extraescolares.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".Gestion_Semestres_Admin"
             android:exported="false" />

@@ -8,77 +8,268 @@
     tools:context=".ui.Administrador.Union_Hidalgo">
 
 
-
-    <!-- Imagen de encabezado -->
+    <!-- ENCABEZADO FIJO -->
     <ImageView
         android:id="@+id/imgEncabezado"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
         android:src="@drawable/encabezado"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/contenedorTitulo" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Logo SEP -->
-    <ImageView
-        android:id="@+id/imgSepLogo"
-        android:layout_width="153dp"
-        android:layout_height="88dp"
-        android:adjustViewBounds="true"
-        android:contentDescription="Logo SEP"
-        android:scaleType="fitCenter"
-        android:src="@drawable/sep_logo"
-        app:layout_constraintBottom_toBottomOf="@id/imgEncabezado"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.062"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/imgEncabezado" />
-    <!-- Logo TecNM -->
-    <ImageView
-        android:id="@+id/imgTecnmLogo"
-        android:layout_width="59dp"
-        android:layout_height="38dp"
-        android:adjustViewBounds="true"
-        android:contentDescription="Logo TecNM"
-        android:scaleType="fitCenter"
-        android:src="@drawable/tecnm_logo"
-        app:layout_constraintBottom_toBottomOf="@id/imgEncabezado"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/imgEncabezado"
-        app:layout_constraintVertical_bias="0.483" />
-    <!-- Logo ITVE -->
-    <ImageView
-        android:id="@+id/imgLogoItve"
-        android:layout_width="151dp"
-        android:layout_height="53dp"
-        android:adjustViewBounds="true"
-        android:contentDescription="Logo ITVE"
-        android:scaleType="fitCenter"
-        android:src="@drawable/logo_itve"
-        app:layout_constraintBottom_toBottomOf="@id/imgEncabezado"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.903"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/imgEncabezado"
-        app:layout_constraintVertical_bias="0.467" />
-
+    <!-- BARRA DE TÍTULO -->
     <FrameLayout
         android:id="@+id/contenedorTitulo"
         android:layout_width="match_parent"
         android:layout_height="80dp"
+        android:layout_marginTop="-30dp"
         android:background="#000080"
-        app:layout_constraintBottom_toTopOf="@+id/contenedorPie"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imgEncabezado"
-        app:layout_constraintVertical_bias="0.201">
+        app:layout_constraintTop_toBottomOf="@+id/imgEncabezado">
+        <!-- Contenido del FrameLayout -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
+            <TextView
+                android:id="@+id/txtTituloPrincipal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Panel Administrador"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/txtSubtitulo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/txtSubtitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Actividades Extraescolares "
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/txtTituloPrincipal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>
+
+    <!-- LOGOS -->
+    <ImageView
+        android:id="@+id/imgSepLogo"
+        android:layout_width="153dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/sep_logo"
+        app:layout_constraintBottom_toTopOf="@id/contenedorTitulo"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgLogoItve"
+        android:layout_width="151dp"
+        android:layout_height="53dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/logo_itve"
+        app:layout_constraintBottom_toTopOf="@id/contenedorTitulo"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgTecnmLogo"
+        android:layout_width="59dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/tecnm_logo"
+        app:layout_constraintBottom_toTopOf="@id/contenedorTitulo"
+        app:layout_constraintEnd_toStartOf="@id/imgLogoItve"
+        app:layout_constraintHorizontal_bias="0.411"
+        app:layout_constraintStart_toEndOf="@id/imgSepLogo" />
+
+    <!--     TARJETA DE INFORMACIÓN CON TÍTULO, SUBTÍTULO E IMAGEN     -->
+
+    <!-- ======================================================= -->
+    <!--     NUEVA TARJETA NARANJA DE GESTIÓN                  -->
+    <!-- ======================================================= -->
+
+    <!-- =============================================================== -->
+    <!--     CONTENEDOR NARANJA (ACTÚA COMO ENCABEZADO)                -->
+    <!-- =============================================================== -->
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tarjeta_informacion"
+        android:layout_width="356dp"
+        android:layout_height="91dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/background_card_grey"
+        android:elevation="4dp"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.285">
+
+
+        <TextView
+            android:id="@+id/card_titulo"
+            android:layout_width="158dp"
+            android:layout_height="25dp"
+            android:text="CIDERS Unión Hidalgo"
+            android:textColor="#040404"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.572"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/card_imagen"
+            android:layout_width="120dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="8dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/tecnm"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.479"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tarjeta_gestion"
+        android:layout_width="350dp"
+        android:layout_height="373dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/background_card_orange"
+        android:elevation="4dp"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.793">
+
+        <!-- Título "Actividades y Estudiantes" -->
+        <TextView
+            android:id="@+id/gestion_titulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Actividades y Estudiantes"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Línea divisoria azul -->
+        <View
+            android:id="@+id/linea_divisoria_azul"
+            android:layout_width="70dp"
+            android:layout_height="3dp"
+            android:layout_marginTop="8dp"
+            android:background="#000080"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/gestion_titulo" />
+
+
+        <!--     NUEVA TARJETA BLANCA (CONTENIDO PRINCIPAL)                -->
+
+        <!-- =============================================================== -->
+        <!--     TARJETA BLANCA (CONTENIDO PRINCIPAL)                        -->
+        <!-- =============================================================== -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tarjeta_contenido_blanca"
+            android:layout_width="319dp"
+            android:layout_height="141dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/background_card"
+            android:elevation="2dp"
+            android:padding="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.205">
+
+            <!-- Título de la Actividad (Ej: Basquetbol) -->
+
+            <!-- Descripción de la Actividad -->
+
+            <!-- Botón para Visualizar Estudiantes -->
+
+            <TextView
+                android:id="@+id/titulo_actividad"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Basquetbol"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <!-- Botón para Visualizar Estudiantes CON ICONO -->
+            <TextView
+                android:id="@+id/descripcion_actividad"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Únete a un equipo dinámico, desarrolla habilidades como dribleo, tiro y defensa. Se compite contra otros campus del TecNM."
+                android:textColor="#424242"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.283" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_visualizar_estudiantes"
+                android:layout_width="128dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="16dp"
+                android:text="Visualizar"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="11sp"
+                app:backgroundTint="#000080"
+                app:cornerRadius="8dp"
+                app:icon="@drawable/visibility_ic"
+                app:iconPadding="8dp"
+                app:iconTint="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/descripcion_actividad"
+                app:layout_constraintVertical_bias="1.0" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <FrameLayout
         android:id="@+id/contenedorPie"
