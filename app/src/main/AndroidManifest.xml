@@ -37,7 +37,8 @@
 
         <activity
             android:name=".Gestion_Semestres_Admin"
-            android:exported="false" />
+            android:exported="false"
+            tools:ignore="DuplicateActivity" />
 
     </application>
 
