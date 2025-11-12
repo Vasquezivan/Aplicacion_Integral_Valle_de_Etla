@@ -292,4 +292,13 @@
             android:textStyle="bold" />
     </FrameLayout>
 
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="138dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
