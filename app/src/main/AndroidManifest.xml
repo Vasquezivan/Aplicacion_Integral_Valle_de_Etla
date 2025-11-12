@@ -11,6 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Plataforma_Extraescolares">
+
+        <!-- Esta será la pantalla inicial -->
         <activity
             android:name=".ui.Administrador.Actividades_Union_Hidalgo"
             android:exported="false" />
@@ -31,13 +33,12 @@
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Plataforma_Extraescolares.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:theme="@style/Theme.Plataforma_Extraescolares.NoActionBar" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity
+            android:name=".Gestion_Semestres_Admin"
+            android:exported="false" />
+
     </application>
 
 </manifest>
