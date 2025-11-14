@@ -8,27 +8,7 @@
     android:windowSoftInputMode="adjustPan"
     tools:context=".LoginActivity">
 
-    <!-- Fondo -->
 
-    <!-- Logo TecNM -->
-
-    <!-- Logo IT Valle de Etla -->
-
-    <!-- Título principal -->
-
-    <!-- Subtítulo -->
-
-    <!-- Icono usuario -->
-
-    <!-- Campo usuario -->
-
-    <!-- Icono contraseña -->
-
-    <!-- Campo contraseña -->
-
-    <!-- Botón acceder -->
-
-    <!-- Texto final -->
 
     <ImageView
         android:id="@+id/imgEncabezado"
@@ -167,9 +147,23 @@
         android:paddingStart="16dp"
         android:textSize="14sp"
         android:elevation="4dp"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/iconPassword"
         app:layout_constraintTop_toBottomOf="@id/etUsuario" />
+
+
+    <ImageView
+        android:id="@+id/btnMostrarPassword"
+        android:layout_width="27dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="10dp"
+        android:contentDescription="Mostrar contraseña"
+        android:elevation="6dp"
+        android:src="@drawable/eye_closed"
+        app:layout_constraintEnd_toEndOf="@id/etPassword"
+        app:layout_constraintTop_toTopOf="@id/etPassword" />
 
     <TextView
         android:id="@+id/textView2"
