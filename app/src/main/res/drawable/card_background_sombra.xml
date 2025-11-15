@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Sombra (capa inferior) -->
+    <item>
+        <shape android:shape="rectangle">
+            <!-- La sombra se simula con un degradado. Puedes ajustar los colores para hacerla más o menos oscura -->
+            <solid android:color="#1A000000" /> <!-- Negro con baja opacidad -->
+            <corners android:radius="15dp" />
+        </shape>
+    </item>
+
+    <!-- Contenido principal de la tarjeta (capa superior) -->
+    <item
+        android:left="2dp"
+        android:right="2dp"
+        android:top="2dp"
+        android:bottom="4dp">  <!-- Un poco más de espacio abajo para que la sombra se note más -->
+        <shape android:shape="rectangle">
+            <solid android:color="#F3F3F3" />
+            <corners android:radius="12dp" />
+        </shape>
+    </item>
+
+</layer-list>
