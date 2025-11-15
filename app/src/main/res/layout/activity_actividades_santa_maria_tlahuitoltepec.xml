@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Administrador.Actividades_Santa_Maria_Tlahuitoltepec">
+
+  <!-- ENCABEZADO FIJO -->
+  <ImageView
+      android:id="@+id/imgEncabezado"
+      android:layout_width="0dp"
+      android:layout_height="120dp"
+      android:scaleType="centerCrop"
+      android:src="@drawable/encabezado"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <!-- BARRA DE TÍTULO -->
+  <FrameLayout
+      android:id="@+id/contenedorTitulo"
+      android:layout_width="match_parent"
+      android:layout_height="80dp"
+      android:layout_marginTop="-30dp"
+      android:background="#000080"
+      app:layout_constraintTop_toBottomOf="@+id/imgEncabezado">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+      <TextView
+          android:id="@+id/txtTituloPrincipal"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Actividades Extraescolares"
+          android:textColor="@android:color/white"
+          android:textSize="20sp"
+          android:textStyle="bold"
+          app:layout_constraintBottom_toTopOf="@id/txtSubtitulo"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.497"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintVertical_chainStyle="packed" />
+      <TextView
+          android:id="@+id/txtSubtitulo"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Santa María Tlahuitoltepec"
+          android:textColor="@android:color/white"
+          android:textSize="14sp"
+          app:layout_constraintTop_toBottomOf="@id/txtTituloPrincipal"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  </FrameLayout>
+
+  <!-- LOGOS -->
+  <ImageView
+      android:id="@+id/imgSepLogo"
+      android:layout_width="153dp"
+      android:layout_height="88dp"
+      android:layout_marginStart="16dp"
+      android:src="@drawable/sep_logo"
+      app:layout_constraintBottom_toTopOf="@id/contenedorTitulo"
+      app:layout_constraintStart_toStartOf="parent" />
+  <ImageView
+      android:id="@+id/imgLogoItve"
+      android:layout_width="151dp"
+      android:layout_height="53dp"
+      android:layout_marginEnd="16dp"
+      android:layout_marginBottom="20dp"
+      android:src="@drawable/logo_itve"
+      app:layout_constraintBottom_toTopOf="@id/contenedorTitulo"
+      app:layout_constraintEnd_toEndOf="parent" />
+  <ImageView
+      android:id="@+id/imgTecnmLogo"
+      android:layout_width="59dp"
+      android:layout_height="38dp"
+      android:layout_marginBottom="24dp"
+      android:src="@drawable/tecnm_logo"
+      app:layout_constraintBottom_toTopOf="@id/contenedorTitulo"
+      app:layout_constraintEnd_toStartOf="@id/imgLogoItve"
+      app:layout_constraintHorizontal_bias="0.411"
+      app:layout_constraintStart_toEndOf="@id/imgSepLogo" />
+
+  <!-- TÍTULO DE LA ACTIVIDAD (DANZA) -->
+  <TextView
+      android:id="@+id/tituloActividad"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="24dp"
+      android:text="Danza"
+      android:textColor="#000080"
+      android:textSize="20sp"
+      android:textStyle="bold"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/contenedorTitulo" />
+
+  <!-- LÍNEA DIVISORIA NARANJA -->
+  <View
+      android:id="@+id/lineaNaranja"
+      android:layout_width="0dp"
+      android:layout_height="2dp"
+      android:layout_marginStart="40dp"
+      android:layout_marginTop="8dp"
+      android:layout_marginEnd="40dp"
+      android:background="#FFA500"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tituloActividad" />
+
+  <!-- SUBTÍTULO O DESCRIPCIÓN DE LA ACTIVIDAD -->
+  <TextView
+      android:id="@+id/subtituloActividad"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="32dp"
+      android:layout_marginTop="8dp"
+      android:layout_marginEnd="32dp"
+      android:gravity="center"
+      android:text="Explora ritmos folklóricos y modernos, mejora tu coordinación y expresión corporal. Participa en eventos culturales."
+      android:textSize="13sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/lineaNaranja" />
+
+  <!-- TARJETA CON LA LISTA DE ESTUDIANTES -->
+  <androidx.cardview.widget.CardView
+      android:id="@+id/cardEstudiante"
+      android:layout_width="336dp"
+      android:layout_height="341dp"
+      android:layout_marginTop="24dp"
+      app:cardCornerRadius="12dp"
+      app:cardElevation="8dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.493"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.775">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="355dp"
+        android:background="@drawable/card_background_sombra">
+
+      <!-- CABECERA DE LA TABLA -->
+      <View
+          android:id="@+id/barraAzul"
+          android:layout_width="0dp"
+          android:layout_height="40dp"
+          android:background="@drawable/barra_azul_redondeada"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.0"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <!-- Líneas guía para las columnas -->
+      <androidx.constraintlayout.widget.Guideline
+          android:id="@+id/guideline_start_name"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          app:layout_constraintGuide_begin="32dp" />
+
+      <androidx.constraintlayout.widget.Guideline
+          android:id="@+id/guideline_start_control"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          app:layout_constraintGuide_end="208dp" />
+
+      <androidx.constraintlayout.widget.Guideline
+          android:id="@+id/guideline_start_carrera"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          app:layout_constraintGuide_begin="207dp" />
+
+      <androidx.constraintlayout.widget.Guideline
+          android:id="@+id/guideline_start_semestre"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          app:layout_constraintGuide_begin="267dp" />
+
+      <!-- Títulos de la cabecera -->
+      <TextView
+          android:id="@+id/headerNombre"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:text="Nombre"
+          android:textColor="@android:color/white"
+          android:textSize="12sp"
+          android:textStyle="bold"
+          app:layout_constraintBottom_toBottomOf="@+id/barraAzul"
+          app:layout_constraintEnd_toStartOf="@+id/guideline_start_control"
+          app:layout_constraintHorizontal_bias="0.0"
+          app:layout_constraintStart_toEndOf="@+id/guideline_start_name"
+          app:layout_constraintTop_toTopOf="@+id/barraAzul" />
+
+      <TextView
+          android:id="@+id/headerNoControl"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:text="No. Control"
+          android:textColor="@android:color/white"
+          android:textSize="12sp"
+          android:textStyle="bold"
+          app:layout_constraintBottom_toBottomOf="@+id/barraAzul"
+          app:layout_constraintEnd_toStartOf="@+id/guideline_start_carrera"
+          app:layout_constraintStart_toEndOf="@+id/guideline_start_control"
+          app:layout_constraintTop_toTopOf="@+id/barraAzul" />
+
+      <TextView
+          android:id="@+id/headerCarrera"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:text="Carrera"
+          android:textColor="@android:color/white"
+          android:textSize="12sp"
+          android:textStyle="bold"
+          app:layout_constraintBottom_toBottomOf="@+id/barraAzul"
+          app:layout_constraintEnd_toStartOf="@+id/guideline_start_semestre"
+          app:layout_constraintStart_toEndOf="@+id/guideline_start_carrera"
+          app:layout_constraintTop_toTopOf="@+id/barraAzul" />
+
+      <TextView
+          android:id="@+id/headerSemestre"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:text="Semestre"
+          android:textColor="@android:color/white"
+          android:textSize="12sp"
+          android:textStyle="bold"
+          app:layout_constraintBottom_toBottomOf="@+id/barraAzul"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.0"
+          app:layout_constraintStart_toEndOf="@+id/guideline_start_semestre"
+          app:layout_constraintTop_toTopOf="@+id/barraAzul" />
+
+      <!-- FILA DE ESTUDIANTE 1 (Datos de ejemplo) -->
+      <CheckBox
+          android:id="@+id/checkEstudiante1"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          app:layout_constraintEnd_toStartOf="@+id/guideline_start_name"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/barraAzul" />
+
+      <TextView
+          android:id="@+id/nombreEstudiante1"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:gravity="center_vertical"
+          android:paddingStart="4dp"
+          android:paddingEnd="4dp"
+          android:text="Ana Sofía Méndez"
+          android:textSize="12sp"
+          app:layout_constraintBottom_toBottomOf="@+id/checkEstudiante1"
+          app:layout_constraintEnd_toStartOf="@+id/guideline_start_control"
+          app:layout_constraintStart_toEndOf="@+id/guideline_start_name"
+          app:layout_constraintTop_toTopOf="@+id/checkEstudiante1" />
+
+      <TextView
+          android:id="@+id/controlEstudiante1"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:text="221E0789"
+          android:textSize="12sp"
+          app:layout_constraintBottom_toBottomOf="@+id/checkEstudiante1"
+          app:layout_constraintEnd_toStartOf="@+id/guideline_start_carrera"
+          app:layout_constraintStart_toEndOf="@+id/guideline_start_control"
+          app:layout_constraintTop_toTopOf="@+id/checkEstudiante1" />
+
+      <TextView
+          android:id="@+id/carreraEstudiante1"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:text="ISC"
+          android:textSize="12sp"
+          app:layout_constraintBottom_toBottomOf="@+id/checkEstudiante1"
+          app:layout_constraintEnd_toStartOf="@+id/guideline_start_semestre"
+          app:layout_constraintStart_toEndOf="@+id/guideline_start_carrera"
+          app:layout_constraintTop_toTopOf="@+id/checkEstudiante1" />
+
+      <TextView
+          android:id="@+id/semestreEstudiante1"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:text="3"
+          android:textSize="12sp"
+          app:layout_constraintBottom_toBottomOf="@+id/checkEstudiante1"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toEndOf="@+id/guideline_start_semestre"
+          app:layout_constraintTop_toTopOf="@+id/checkEstudiante1" />
+
+      <View
+          android:id="@+id/divider1"
+          android:layout_width="0dp"
+          android:layout_height="1dp"
+          android:layout_marginTop="8dp"
+          android:background="?android:attr/listDivider"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/checkEstudiante1" />
+
+      <!-- FILA DE ESTUDIANTE 2 (Datos de ejemplo) -->
+      <CheckBox
+          android:id="@+id/checkEstudiante2"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          app:layout_constraintEnd_toStartOf="@+id/guideline_start_name"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/divider1" />
+
+      <TextView
+          android:id="@+id/nombreEstudiante2"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:gravity="center_vertical"
+          android:paddingStart="4dp"
+          android:paddingEnd="4dp"
+          android:text="Carlos Daniel Ruiz"
+          android:textSize="12sp"
+          app:layout_constraintBottom_toBottomOf="@+id/checkEstudiante2"
+          app:layout_constraintEnd_toStartOf="@+id/guideline_start_control"
+          app:layout_constraintStart_toEndOf="@+id/guideline_start_name"
+          app:layout_constraintTop_toTopOf="@+id/checkEstudiante2" />
+
+      <TextView
+          android:id="@+id/controlEstudiante2"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:text="201E0333"
+          android:textSize="12sp"
+          app:layout_constraintBottom_toBottomOf="@+id/checkEstudiante2"
+          app:layout_constraintEnd_toStartOf="@+id/guideline_start_carrera"
+          app:layout_constraintStart_toEndOf="@+id/guideline_start_control"
+          app:layout_constraintTop_toTopOf="@+id/checkEstudiante2" />
+
+      <TextView
+          android:id="@+id/carreraEstudiante2"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:text="IGE"
+          android:textSize="12sp"
+          app:layout_constraintBottom_toBottomOf="@+id/checkEstudiante2"
+          app:layout_constraintEnd_toStartOf="@+id/guideline_start_semestre"
+          app:layout_constraintStart_toEndOf="@+id/guideline_start_carrera"
+          app:layout_constraintTop_toTopOf="@+id/checkEstudiante2" />
+
+      <TextView
+          android:id="@+id/semestreEstudiante2"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:text="8"
+          android:textSize="12sp"
+          app:layout_constraintBottom_toBottomOf="@+id/checkEstudiante2"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toEndOf="@+id/guideline_start_semestre"
+          app:layout_constraintTop_toTopOf="@+id/checkEstudiante2" />
+
+      <View
+          android:id="@+id/divider2"
+          android:layout_width="0dp"
+          android:layout_height="1dp"
+          android:layout_marginTop="8dp"
+          android:background="?android:attr/listDivider"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/checkEstudiante2"/>
+
+      <!-- BOTONES DE ACCIÓN -->
+      <com.google.android.material.button.MaterialButton
+          android:id="@+id/botonEditar"
+          android:layout_width="110dp"
+          android:layout_height="38dp"
+          android:layout_marginEnd="8dp"
+          android:backgroundTint="#FFA500"
+          android:text="Editar"
+          android:textAllCaps="false"
+          android:textSize="10sp"
+          app:icon="@drawable/edit"
+          app:iconGravity="textStart"
+          app:iconSize="20dp"
+          app:iconTint="@android:color/black"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.917"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintVertical_bias="0.949" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  </androidx.cardview.widget.CardView>
+
+  <!-- PIE DE PÁGINA FIJO -->
+  <FrameLayout
+      android:id="@+id/contenedorPie"
+      android:layout_width="match_parent"
+      android:layout_height="60dp"
+      android:background="#000080"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="© 2025 Instituto Tecnológico del Valle de Etla. Todos los derechos reservados."
+        android:textColor="@android:color/white"
+        android:textSize="11sp"
+        android:textStyle="bold" />
+  </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,5 +14,20 @@
             android:icon="@drawable/unidades_ic"
             android:title="Unión Hidalgo" />
 
+        <item
+            android:id="@+id/nav_Unidad_Demetrio"
+            android:icon="@drawable/unidades_ic"
+            android:title="Demetrio de Vallejo" />
+
+        <item
+            android:id="@+id/nav_Unidad_Tlahuitoltepec"
+            android:icon="@drawable/unidades_ic"
+            android:title="Santa María Tlahuitoltepec" />
+
+        <item
+            android:id="@+id/nav_Unidad_Valle_de_Etla"
+            android:icon="@drawable/unidades_ic"
+            android:title="Valle de Etla" />
+
     </group>
 </menu>
