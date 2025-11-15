@@ -11,8 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Plataforma_Extraescolares">
-
-        <!-- Esta será la pantalla inicial -->
+        <activity
+            android:name=".ui.Administrador.Actividades_Valle_de_Etla"
+            android:exported="false" />
+        <activity
+            android:name=".ui.Administrador.Actividades_Santa_Maria_Tlahuitoltepec"
+            android:exported="false" />
+        <activity
+            android:name=".ui.Administrador.Actividades_Demetrio_Vallejo"
+            android:exported="false" /> <!-- Esta será la pantalla inicial -->
         <activity
             android:name=".ui.Administrador.Actividades_Union_Hidalgo"
             android:exported="false" />
@@ -30,16 +37,14 @@
             android:name=".Gestion_Semestres_Admin"
             android:exported="false" />
         <activity
+            android:name=".Gestion_Semestres_Admin"
+            android:exported="false"
+            tools:ignore="DuplicateActivity" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Plataforma_Extraescolares.NoActionBar" />
-
-        <activity
-            android:name=".Gestion_Semestres_Admin"
-            android:exported="false"
-            tools:ignore="DuplicateActivity" />
-
     </application>
 
 </manifest>

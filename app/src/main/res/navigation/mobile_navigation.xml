@@ -17,4 +17,24 @@
         android:name="com.example.plataforma_extraescolares.ui.Administrador.Union_Hidalgo"
         android:label="Unión Hidalgo "
         tools:layout="@layout/fragment_union__hidalgo" />
+
+    <fragment
+        android:id="@+id/nav_Unidad_Demetrio"
+        android:name="com.example.plataforma_extraescolares.ui.Administrador.Demetrio_Vallejo"
+        android:label="Demetrio de Vallejo"
+        tools:layout="@layout/fragment_demetrio__vallejo" />
+
+    <fragment
+        android:id="@+id/nav_Unidad_Tlahuitoltepec"
+        android:name="com.example.plataforma_extraescolares.ui.Administrador.Santa_Maria_Tlahuitoltepec"
+        android:label="Santa María Tlahuitoltepec"
+        tools:layout="@layout/fragment_santa__maria__tlahuitoltepec" />
+
+    <fragment
+        android:id="@+id/nav_Unidad_Valle_de_Etla"
+        android:name="com.example.plataforma_extraescolares.ui.Administrador.Valle_de_Etla"
+        android:label="Valle de Etla"
+        tools:layout="@layout/fragment_valle_de__etla" />
+
+
 </navigation>
