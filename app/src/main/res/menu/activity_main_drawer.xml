@@ -3,12 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
+    <!-- Grupo 1: Panel Principal -->
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/home_ic"
             android:title="Inicio" />
+    </group>
 
+    <!-- Separador y título para Unidades -->
+    <item
+        android:title="Unidades"
+        android:enabled="false"
+        android:checkable="false" />
+
+    <!-- Grupo 2: Unidades -->
+    <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_Unidad_Hidaldo"
             android:icon="@drawable/unidades_ic"
@@ -17,17 +27,30 @@
         <item
             android:id="@+id/nav_Unidad_Demetrio"
             android:icon="@drawable/unidades_ic"
-            android:title="Demetrio de Vallejo" />
+            android:title="Demetrio Vallejo" />
 
         <item
             android:id="@+id/nav_Unidad_Tlahuitoltepec"
             android:icon="@drawable/unidades_ic"
-            android:title="Santa María Tlahuitoltepec" />
+            android:title="Tahuitoltepec" />
 
         <item
             android:id="@+id/nav_Unidad_Valle_de_Etla"
             android:icon="@drawable/unidades_ic"
             android:title="Valle de Etla" />
+    </group>
 
+    <!-- Separador y título para Administración -->
+    <item
+        android:title="Administración"
+        android:enabled="false"
+        android:checkable="false" />
+
+    <!-- Grupo 3: Administración -->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_Unidad_G_Usuarios"
+            android:icon="@drawable/usuario"
+            android:title="Gestión de Usuarios" />
     </group>
 </menu>
