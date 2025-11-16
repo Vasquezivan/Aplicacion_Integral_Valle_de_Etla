@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Administrador.GUsuariosFragment">
+
+    <!-- ENCABEZADO FIJO -->
+    <ImageView
+        android:id="@+id/imgEncabezado"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/encabezado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- BARRA DE TÍTULO -->
+    <FrameLayout
+        android:id="@+id/contenedorTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="-30dp"
+        android:background="#000080"
+        app:layout_constraintTop_toBottomOf="@+id/imgEncabezado">
+        <!-- Contenido del FrameLayout -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txtTituloPrincipal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Actividades Extraescolares"
+                android:textColor="@android:color/white"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/txtSubtitulo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/txtSubtitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Instituto Tecnológico del Valle de Etla"
+                android:textColor="@android:color/white"
+                android:textSize="11sp"
+                app:layout_constraintTop_toBottomOf="@id/txtTituloPrincipal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+
+    <!-- LOGOS -->
+    <ImageView
+        android:id="@+id/imgSepLogo"
+        android:layout_width="153dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/sep_logo"
+        app:layout_constraintBottom_toTopOf="@id/contenedorTitulo"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgLogoItve"
+        android:layout_width="151dp"
+        android:layout_height="53dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/logo_itve"
+        app:layout_constraintBottom_toTopOf="@id/contenedorTitulo"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgTecnmLogo"
+        android:layout_width="59dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/tecnm_logo"
+        app:layout_constraintBottom_toTopOf="@id/contenedorTitulo"
+        app:layout_constraintEnd_toStartOf="@id/imgLogoItve"
+        app:layout_constraintHorizontal_bias="0.411"
+        app:layout_constraintStart_toEndOf="@id/imgSepLogo" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tarjeta_informacion"
+        android:layout_width="356dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.285">
+
+        <!-- TÍTULO -->
+        <TextView
+            android:id="@+id/txtTituloGestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gestión de Usuarios"
+            android:textColor="#0A1172"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textAlignment="center" />
+
+        <!-- LÍNEA DIVISORA -->
+        <View
+            android:id="@+id/lineaDivisoraNaranja"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="#FF8A00"
+            android:layout_marginTop="4dp"
+            app:layout_constraintTop_toBottomOf="@id/txtTituloGestion"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- DESCRIPCIÓN -->
+        <TextView
+            android:id="@+id/txtDescripcionGestion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Administra de forma sencilla la información de los usuarios, agrega, edita o elimina perfiles."
+            android:textColor="#444444"
+            android:textSize="11sp"
+            android:layout_marginTop="8dp"
+            android:textAlignment="center"
+            app:layout_constraintTop_toBottomOf="@+id/lineaDivisoraNaranja"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_gestion_usuarios"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tarjeta_informacion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- ENCABEZADO DE LA TABLA (AZUL) -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/header_tabla_usuarios"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_header_tabla">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tabla de Datos"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- TARJETA CON LA LISTA DE ESTUDIANTES - MÁS ANCHA -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardEstudiante"
+        android:layout_width="380dp"
+        android:layout_height="260dp"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="8dp"
+        app:layout_constraintTop_toBottomOf="@id/card_gestion_usuarios"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/card_background_sombra">
+
+            <!-- CABECERA DE LA TABLA -->
+            <View
+                android:id="@+id/barraAzul"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:background="@drawable/barra_azul_redondeada"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Líneas guía para las columnas - ORDEN MODIFICADO: Contraseña antes de Contacto -->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_start_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="26dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_start_control"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="81dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_start_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="155dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_start_contacto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="214dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_start_rol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="310dp" />
+
+            <!-- CABECERA - ORDEN MODIFICADO -->
+            <TextView
+                android:id="@+id/headerNombre"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Nombre"
+                android:textColor="@android:color/white"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/barraAzul"
+                app:layout_constraintEnd_toStartOf="@id/guideline_start_control"
+                app:layout_constraintStart_toEndOf="@id/guideline_start_name"
+                app:layout_constraintTop_toTopOf="@id/barraAzul" />
+
+            <TextView
+                android:id="@+id/headerNoControl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Unidad Academica"
+                android:textColor="@android:color/white"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/barraAzul"
+                app:layout_constraintEnd_toStartOf="@id/guideline_start_password"
+                app:layout_constraintStart_toEndOf="@id/guideline_start_control"
+                app:layout_constraintTop_toTopOf="@id/barraAzul" />
+
+            <TextView
+                android:id="@+id/headerPassword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Contraseña"
+                android:textColor="@android:color/white"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/barraAzul"
+                app:layout_constraintEnd_toStartOf="@id/guideline_start_contacto"
+                app:layout_constraintStart_toEndOf="@id/guideline_start_password"
+                app:layout_constraintTop_toTopOf="@id/barraAzul" />
+
+            <TextView
+                android:id="@+id/headerContacto"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Contacto"
+                android:textColor="@android:color/white"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/barraAzul"
+                app:layout_constraintEnd_toStartOf="@id/guideline_start_rol"
+                app:layout_constraintStart_toEndOf="@id/guideline_start_contacto"
+                app:layout_constraintTop_toTopOf="@id/barraAzul" />
+
+            <TextView
+                android:id="@+id/headerRol"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Rol"
+                android:textColor="@android:color/white"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/barraAzul"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline_start_rol"
+                app:layout_constraintTop_toTopOf="@id/barraAzul" />
+
+            <!-- FILA ESTUDIANTE 1 -->
+            <!-- CheckBox más pequeño -->
+            <CheckBox
+                android:id="@+id/checkEstudiante1"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginTop="12dp"
+                android:scaleX="0.9"
+                android:scaleY="0.9"
+                app:layout_constraintEnd_toStartOf="@id/guideline_start_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/barraAzul" />
+
+            <TextView
+                android:id="@+id/nombreEstudiante1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Juan Pérez"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                app:layout_constraintStart_toEndOf="@id/guideline_start_name"
+                app:layout_constraintEnd_toStartOf="@id/guideline_start_control"
+                app:layout_constraintTop_toTopOf="@id/checkEstudiante1"
+                app:layout_constraintBottom_toBottomOf="@id/checkEstudiante1" />
+
+            <TextView
+                android:id="@+id/controlEstudiante1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Unidad Demetrio Vallejo"
+                android:textSize="10sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/guideline_start_control"
+                app:layout_constraintEnd_toStartOf="@id/guideline_start_password"
+                app:layout_constraintTop_toTopOf="@id/checkEstudiante1"
+                app:layout_constraintBottom_toBottomOf="@id/checkEstudiante1" />
+
+            <TextView
+                android:id="@+id/passwordEstudiante1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="admin123"
+                android:textSize="10sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/guideline_start_password"
+                app:layout_constraintEnd_toStartOf="@id/guideline_start_contacto"
+                app:layout_constraintTop_toTopOf="@id/checkEstudiante1"
+                app:layout_constraintBottom_toBottomOf="@id/checkEstudiante1" />
+
+            <TextView
+                android:id="@+id/contactoEstudiante1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="juan.perz@gmail.com"
+                android:textSize="10sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/guideline_start_contacto"
+                app:layout_constraintEnd_toStartOf="@id/guideline_start_rol"
+                app:layout_constraintTop_toTopOf="@id/checkEstudiante1"
+                app:layout_constraintBottom_toBottomOf="@id/checkEstudiante1" />
+
+            <TextView
+                android:id="@+id/rolEstudiante1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Administrador"
+                android:textSize="10sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/guideline_start_rol"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/checkEstudiante1"
+                app:layout_constraintBottom_toBottomOf="@id/checkEstudiante1" />
+
+            <View
+                android:id="@+id/divider1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="6dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/checkEstudiante1" />
+
+            <!-- FILA ESTUDIANTE 2 -->
+            <!-- CheckBox más pequeño -->
+            <CheckBox
+                android:id="@+id/checkEstudiante2"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginTop="12dp"
+                android:scaleX="0.9"
+                android:scaleY="0.9"
+                app:layout_constraintEnd_toStartOf="@id/guideline_start_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+            <TextView
+                android:id="@+id/nombreEstudiante2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Laura Gonzáles"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                app:layout_constraintStart_toEndOf="@id/guideline_start_name"
+                app:layout_constraintEnd_toStartOf="@id/guideline_start_control"
+                app:layout_constraintTop_toTopOf="@id/checkEstudiante2"
+                app:layout_constraintBottom_toBottomOf="@id/checkEstudiante2" />
+
+            <TextView
+                android:id="@+id/controlEstudiante2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Unidad Valle de Etla"
+                android:textSize="10sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/guideline_start_control"
+                app:layout_constraintEnd_toStartOf="@id/guideline_start_password"
+                app:layout_constraintTop_toTopOf="@id/checkEstudiante2"
+                app:layout_constraintBottom_toBottomOf="@id/checkEstudiante2" />
+
+            <TextView
+                android:id="@+id/passwordEstudiante2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="cordi123"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/checkEstudiante2"
+                app:layout_constraintEnd_toStartOf="@id/guideline_start_contacto"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/guideline_start_password"
+                app:layout_constraintTop_toTopOf="@id/checkEstudiante2"
+                app:layout_constraintVertical_bias="0.666" />
+
+            <TextView
+                android:id="@+id/contactoEstudiante2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Laura.g34@gmail.com"
+                android:textSize="10sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/guideline_start_contacto"
+                app:layout_constraintEnd_toStartOf="@id/guideline_start_rol"
+                app:layout_constraintTop_toTopOf="@id/checkEstudiante2"
+                app:layout_constraintBottom_toBottomOf="@id/checkEstudiante2" />
+
+            <TextView
+                android:id="@+id/rolEstudiante2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Coordinador"
+                android:textSize="10sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/guideline_start_rol"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/checkEstudiante2"
+                app:layout_constraintBottom_toBottomOf="@id/checkEstudiante2" />
+
+            <!-- BOTÓN EDITAR -->
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="4dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/checkEstudiante2" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/botonEditar"
+                android:layout_width="100dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="16dp"
+                android:backgroundTint="#FFA500"
+                android:text="Editar"
+                android:textAllCaps="false"
+                android:textSize="12sp"
+                app:icon="@drawable/edit"
+                app:iconGravity="textStart"
+                app:iconSize="16dp"
+                android:textStyle="bold"
+                app:iconTint="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.925" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <FrameLayout
+        android:id="@+id/contenedorPie"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#000080"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Texto blanco encima -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="© 2025 Instituto Tecnológico del Valle de Etla. Todos los derechos reservados."
+            android:textColor="@android:color/white"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

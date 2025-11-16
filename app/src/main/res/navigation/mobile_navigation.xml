@@ -36,5 +36,10 @@
         android:label="Valle de Etla"
         tools:layout="@layout/fragment_valle_de__etla" />
 
+    <fragment
+        android:id="@+id/nav_Unidad_G_Usuarios"
+        android:name="com.example.plataforma_extraescolares.ui.Administrador.GUsuariosFragment"
+        android:label="@string/gestion_usuarios"
+        tools:layout="@layout/fragment_g_usuarios" />
 
 </navigation>
