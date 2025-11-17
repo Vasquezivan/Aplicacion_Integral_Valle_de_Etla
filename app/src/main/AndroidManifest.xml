@@ -12,6 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Plataforma_Extraescolares">
         <activity
+            android:name=".CoordinadorActivity"
+            android:exported="false"
+            android:label="@string/title_activity_coordinador"
+            android:theme="@style/Theme.Plataforma_Extraescolares.NoActionBar" />
+        <activity
             android:name=".ui.Administrador.Actividades_Valle_de_Etla"
             android:exported="false" />
         <activity

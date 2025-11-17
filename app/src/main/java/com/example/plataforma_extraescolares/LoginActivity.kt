@@ -7,6 +7,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import android.text.InputType
 
 class LoginActivity : AppCompatActivity() {
 
@@ -14,6 +15,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        // Referencias a elementos del layout
         val etUsuario = findViewById<EditText>(R.id.etUsuario)
         val etPassword = findViewById<EditText>(R.id.etPassword)
         val btnLogin = findViewById<Button>(R.id.btnLogin)
@@ -22,46 +24,45 @@ class LoginActivity : AppCompatActivity() {
         // Estado inicial de la contraseña oculta
         var passwordVisible = false
 
-        // Función para mostrar/ocultar contraseña
+        // Mostrar / Ocultar contraseña
         btnMostrarPassword.setOnClickListener {
-            // Guardar posición del cursor
-            val start = etPassword.selectionStart
-            val end = etPassword.selectionEnd
+            val cursorPos = etPassword.selectionStart
 
             if (passwordVisible) {
                 // Ocultar contraseña
-                etPassword.inputType = android.text.InputType.TYPE_CLASS_TEXT or
-                        android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD
+                etPassword.inputType =
+                    InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
                 btnMostrarPassword.setImageResource(R.drawable.eye_closed)
             } else {
                 // Mostrar contraseña
-                etPassword.inputType = android.text.InputType.TYPE_CLASS_TEXT or
-                        android.text.InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                etPassword.inputType =
+                    InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
                 btnMostrarPassword.setImageResource(R.drawable.eye_open)
             }
 
             passwordVisible = !passwordVisible
-
-            // Restaurar la posición del cursor
-            etPassword.setSelection(start, end)
-
-            // Mantener el estilo de letra original
-            etPassword.typeface = etPassword.typeface
+            etPassword.setSelection(cursorPos)
         }
 
-        // Botón de login
+        // BOTÓN LOGIN
         btnLogin.setOnClickListener {
-            val usuario = etUsuario.text.toString()
-            val password = etPassword.text.toString()
+            val usuario = etUsuario.text.toString().trim()
+            val password = etPassword.text.toString().trim()
 
-            // Validación simple (puedes conectar a BD después)
+            // ACCESO ADMIN
             if (usuario == "admin" && password == "1234") {
-                Toast.makeText(this, "Acceso correcto", Toast.LENGTH_SHORT).show()
-
-                // Ir al MainActivity
+                Toast.makeText(this, "Acceso como Administrador", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
-                finish() // evita que regrese al login con el botón atrás
+                finish()
+
+                // ACCESO COORDINADOR
+            } else if (usuario == "coordinador" && password == "5678") {
+                Toast.makeText(this, "Acceso como Coordinador", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, CoordinadorActivity::class.java)
+                startActivity(intent)
+                finish()
+
             } else {
                 Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show()
             }
