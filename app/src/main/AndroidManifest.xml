@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Plataforma_Extraescolares">
         <activity
+            android:name=".BienvenidaAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BienvenidaCoordinadorActivity"
+            android:exported="false" />
+        <activity
             android:name=".CoordinadorActivity"
             android:exported="false"
             android:label="@string/title_activity_coordinador"
