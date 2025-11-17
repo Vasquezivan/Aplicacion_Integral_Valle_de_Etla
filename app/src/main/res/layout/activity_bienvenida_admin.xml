@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment"
+
+
+
+    android:id="@+id/main"
+    android:background="#F0F0F0">
+
+    <!-- ENCABEZADO FIJO -->
+    <ImageView
+        android:id="@+id/imgEncabezado"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/encabezado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- BARRA DE TÍTULO -->
+    <FrameLayout
+        android:id="@+id/contenedorTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="-30dp"
+        android:background="#000080"
+        app:layout_constraintTop_toBottomOf="@+id/imgEncabezado">
+        <!-- Contenido del FrameLayout -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txtTituloPrincipal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Panel Administrador "
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/txtSubtitulo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/txtSubtitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Actividades Extraescolares "
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/txtTituloPrincipal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+
+    <!-- LOGOS -->
+    <ImageView
+        android:id="@+id/imgSepLogo"
+        android:layout_width="153dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/sep_logo"
+        app:layout_constraintBottom_toTopOf="@id/contenedorTitulo"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgLogoItve"
+        android:layout_width="151dp"
+        android:layout_height="53dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/logo_itve"
+        app:layout_constraintBottom_toTopOf="@id/contenedorTitulo"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgTecnmLogo"
+        android:layout_width="59dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/tecnm_logo"
+        app:layout_constraintBottom_toTopOf="@id/contenedorTitulo"
+        app:layout_constraintEnd_toStartOf="@id/imgLogoItve"
+        app:layout_constraintHorizontal_bias="0.411"
+        app:layout_constraintStart_toEndOf="@id/imgSepLogo" />
+
+    <!--
+    ======================= TARJETA DE BIENVENIDA =======================
+    -->
+
+    <!-- PIE DE PÁGINA -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tarjeta_bienvenida"
+        android:layout_width="358dp"
+        android:layout_height="374dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/background_card"
+        android:elevation="8dp"
+        android:padding="24dp"
+        app:layout_constraintBottom_toTopOf="@id/contenedorPie"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contenedorTitulo"
+        app:layout_constraintVertical_bias="0.401">
+
+        <!-- Título de la tarjeta -->
+
+        <!-- Descripción de la tarjeta -->
+
+        <TextView
+            android:id="@+id/txt_card_title"
+            android:layout_width="337dp"
+            android:layout_height="59dp"
+            android:gravity="center"
+            android:text="Bienvenido al Panel Administrador "
+            android:textColor="#000080"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.481"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.004" />
+
+        <!-- Descripción de la tarjeta (CON TEXTO JUSTIFICADO) -->
+        <!-- Descripción de la tarjeta (CON TEXTO JUSTIFICADO) -->
+
+
+        <!-- Botón de acción -->
+
+        <TextView
+            android:id="@+id/txt_card_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:justificationMode="inter_word"
+            android:text="Aquí podrás gestionar las actividades extraescolares, administrar usuarios y mucho más."
+            android:textColor="#333333"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_card_title"
+            app:layout_constraintVertical_bias="0.038" />
+
+
+        <ImageView
+            android:id="@+id/tecprincipal"
+            android:layout_width="148dp"
+            android:layout_height="104dp"
+            android:src="@drawable/tecnm"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.555"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.626"
+            tools:ignore="MissingConstraints" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/contenedorPie"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#000080"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Texto blanco encima -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="© 2025 Instituto Tecnológico del Valle de Etla. Todos los derechos reservados."
+            android:textColor="@android:color/white"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
