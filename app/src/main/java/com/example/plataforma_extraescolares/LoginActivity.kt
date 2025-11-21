@@ -33,7 +33,7 @@ class LoginActivity : AppCompatActivity() {
             if (usuario == "admin" && password == "1234") {
                 Toast.makeText(this, "Acceso como Administrador", Toast.LENGTH_SHORT).show()
 
-                val intent = Intent(this, BienvenidaAdminActivity::class.java)
+                val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()
             }
