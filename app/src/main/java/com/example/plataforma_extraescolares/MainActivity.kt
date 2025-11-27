@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Quitar la ActionBar si todavía existe por el tema
-        supportActionBar?.hide()
+        //supportActionBar?.hide()
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
