@@ -10,52 +10,52 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Plataforma_Extraescolares">
-        <activity
-            android:name=".BienvenidaAdminActivity"
-            android:exported="false" />
-        <activity
-            android:name=".BienvenidaCoordinadorActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CoordinadorActivity"
-            android:exported="false"
-            android:label="@string/title_activity_coordinador"
-            android:theme="@style/Theme.Plataforma_Extraescolares.NoActionBar" />
-        <activity
-            android:name=".ui.Administrador.Actividades_Valle_de_Etla"
-            android:exported="false" />
-        <activity
-            android:name=".ui.Administrador.Actividades_Santa_Maria_Tlahuitoltepec"
-            android:exported="false" />
-        <activity
-            android:name=".ui.Administrador.Actividades_Demetrio_Vallejo"
-            android:exported="false" /> <!-- Esta será la pantalla inicial -->
-        <activity
-            android:name=".ui.Administrador.Actividades_Union_Hidalgo"
-            android:exported="false" />
+        android:theme="@style/Theme.Plataforma_Extraescolares.NoActionBar">
+
+        <!-- ACTIVIDAD PRINCIPAL (pantalla de login) SIN ActionBar -->
         <activity
             android:name=".LoginActivity"
             android:exported="true"
             android:theme="@style/Theme.Plataforma_Extraescolares.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Gestion_Semestres_Admin"
-            android:exported="false" />
-        <activity
-            android:name=".Gestion_Semestres_Admin"
-            android:exported="false"
-            tools:ignore="DuplicateActivity" />
+
+        <!-- ACTIVIDADES QUE NO NECESITAN ActionBar -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.Plataforma_Extraescolares.NoActionBar" />
+
+        <activity
+            android:name=".CoordinadorActivity"
+            android:exported="false"
+            android:label="@string/title_activity_coordinador"
+            android:theme="@style/Theme.Plataforma_Extraescolares.NoActionBar" />
+        
+
+        <activity
+            android:name=".ui.Administrador.Actividades_Valle_de_Etla"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.Administrador.Actividades_Santa_Maria_Tlahuitoltepec"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.Administrador.Actividades_Demetrio_Vallejo"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.Administrador.Actividades_Union_Hidalgo"
+            android:exported="false" />
+
+        <activity
+            android:name=".Gestion_Semestres_Admin"
+            android:exported="false" />
+
     </application>
 
 </manifest>

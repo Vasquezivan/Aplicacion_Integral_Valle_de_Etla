@@ -1,17 +1,31 @@
 <resources>
-    <string name="app_name">Plataforma_Extraescolares</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <!-- Nombre de la app -->
+    <string name="app_name">Plataforma Extraescolares</string>
+
+    <!-- Drawer / Toolbar -->
+    <string name="navigation_drawer_open">Abrir menú</string>
+    <string name="navigation_drawer_close">Cerrar menú</string>
+
+    <!-- Header del NavigationView -->
     <string name="nav_header_title">Actividades Extraescolares</string>
     <string name="nav_header_subtitle">Instituto Tecnológico del Valle de Etla</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="gestion_usuarios">Usuarios</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Menú principal -->
+    <string name="nav_home">Inicio</string>
+    <string name="nav_unidad_hidaldo">Unión Hidalgo</string>
+    <string name="nav_unidad_demetrio">Demetrio Vallejo</string>
+    <string name="nav_unidad_tlahuitoltepec">Tahuitoltepec</string>
+    <string name="nav_unidad_valle_de_etla">Valle de Etla</string>
+    <string name="nav_unidad_g_usuarios">Gestión de Usuarios</string>
+
+    <!-- Navigation Component -->
+    <string name="gestion_usuarios">Gestión de Usuarios</string>
+    <string name="menu_home">Inicio</string>
+    <string name="menu_gallery">Galería</string>
+    <string name="menu_slideshow">Diapositivas</string>
+
+    <!-- Otros -->
+    <string name="action_settings">Settings</string>
     <string name="title_activity_coordinador">CoordinadorActivity</string>
 </resources>

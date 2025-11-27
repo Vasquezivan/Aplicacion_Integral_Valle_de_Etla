@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Título -->
+        <TextView
+            android:id="@+id/txtTituloConstancia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Constancia del Estudiante"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Información ejemplo -->
+        <TextView
+            android:id="@+id/txtInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aquí aparecerá la información del estudiante."
+            android:textSize="16sp"
+            android:layout_marginBottom="30dp"/>
+
+        <!-- Botón Editar -->
+        <Button
+            android:id="@+id/btnEditar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Editar información del estudiante"
+            android:layout_marginBottom="15dp"/>
+
+        <!-- Botón Evaluar (este es el que te marcaba error) -->
+        <Button
+            android:id="@+id/btnEvaluar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Abrir Formulario de Evaluación" />
+
+    </LinearLayout>
+
+</ScrollView>
