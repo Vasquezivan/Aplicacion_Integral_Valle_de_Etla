@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- ENCABEZADO -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- LOGO IZQUIERDO -->
+            <ImageView
+                android:id="@+id/logoIzq"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:src="@drawable/sep_logo"
+                android:scaleType="fitCenter" />
+
+            <!-- TABLA DEL ENCABEZADO -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="@drawable/header_border"
+                android:padding="8dp"
+                android:layout_marginStart="8dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Evaluación al desempeño de la Actividad Promoción Cultural y/o Deportiva"
+                    android:textStyle="bold"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="6dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Referencia Norma ISO 9001:2015  8.2.2"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Código: TecNM-VI-PO-003-04"
+                            android:gravity="end"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Revisión: 0"
+                            android:gravity="end"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Página 2 de 2"
+                            android:gravity="end"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- LOGO DERECHO -->
+            <ImageView
+                android:id="@+id/logoDer"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:src="@drawable/logo_itve"
+                android:scaleType="fitCenter"
+                android:layout_marginStart="8dp" />
+
+        </LinearLayout>
+
+        <!-- ESPACIO -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <!-- DATOS DE ENCABEZADO -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="INSTITUTO TECNOLÓGICO DE ____________________________"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subdirección de Planeación y Vinculación\nDepartamento de Actividades Extraescolares\nOficina de Promoción Cultural o Deportiva"
+            android:layout_marginTop="10dp"
+            android:textSize="13sp" />
+
+        <!-- ESPACIO -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
+
+        <!-- CAMPOS DEL ESTUDIANTE -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre del estudiante:"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/etNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre completo"
+            android:background="@android:color/transparent"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Actividad Cultural y/o Deportiva:"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/etActividad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Actividad"
+            android:background="@android:color/transparent"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Periodo de realización:"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/etPeriodo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Periodo"
+            android:background="@android:color/transparent"
+            android:textSize="14sp" />
+
+        <!-- ESPACIO -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <!-- TABLA DE EVALUACIÓN -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nivel de desempeño del criterio"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <!-- TABLA -->
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1,2,3,4,5"
+            android:layout_marginTop="10dp">
+
+            <!-- ENCABEZADOS -->
+            <TableRow>
+                <TextView android:text="No." android:textStyle="bold" />
+                <TextView android:text="Criterios a evaluar" android:textStyle="bold" />
+                <TextView android:text="Ins" android:textStyle="bold" />
+                <TextView android:text="Suf" android:textStyle="bold" />
+                <TextView android:text="Bue" android:textStyle="bold" />
+                <TextView android:text="Not" android:textStyle="bold" />
+                <TextView android:text="Exc" android:textStyle="bold" />
+            </TableRow>
+
+            <!-- FILA 1 -->
+            <TableRow>
+                <TextView android:text="1" />
+                <TextView android:text="Cumple en tiempo y forma..." />
+                <CheckBox />
+                <CheckBox />
+                <CheckBox />
+                <CheckBox />
+                <CheckBox />
+            </TableRow>
+
+            <!-- FILA 2 -->
+            <TableRow>
+                <TextView android:text="2" />
+                <TextView android:text="Trabaja en equipo y se adapta..." />
+                <CheckBox />
+                <CheckBox />
+                <CheckBox />
+                <CheckBox />
+                <CheckBox />
+            </TableRow>
+
+            <!-- FILA 3 -->
+            <TableRow>
+                <TextView android:text="3" />
+                <TextView android:text="Muestra liderazgo..." />
+                <CheckBox />
+                <CheckBox />
+                <CheckBox />
+                <CheckBox />
+                <CheckBox />
+            </TableRow>
+
+            <!-- FILA 4 -->
+            <TableRow>
+                <TextView android:text="4" />
+                <TextView android:text="Organiza su tiempo..." />
+                <CheckBox />
+                <CheckBox />
+                <CheckBox />
+                <CheckBox />
+                <CheckBox />
+            </TableRow>
+
+            <!-- FILA 5 -->
+            <TableRow>
+                <TextView android:text="5" />
+                <TextView android:text="Interpreta la realidad..." />
+                <CheckBox />
+                <CheckBox />
+                <CheckBox />
+                <CheckBox />
+                <CheckBox />
+            </TableRow>
+
+            <!-- FILA 6 -->
+            <TableRow>
+                <TextView android:text="6" />
+                <TextView android:text="Realiza sugerencias innovadoras..." />
+                <CheckBox />
+                <CheckBox />
+                <CheckBox />
+                <CheckBox />
+                <CheckBox />
+            </TableRow>
+
+            <!-- FILA 7 -->
+            <TableRow>
+                <TextView android:text="7" />
+                <TextView android:text="Tiene iniciativa y espíritu de servicio..." />
+                <CheckBox />
+                <CheckBox />
+                <CheckBox />
+                <CheckBox />
+                <CheckBox />
+            </TableRow>
+
+        </TableLayout>
+
+        <!-- OBSERVACIONES -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Observaciones:"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/etObservaciones"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:gravity="top"
+            android:background="@drawable/logo_itve"
+            android:hint="Escriba observaciones aquí"
+            android:padding="8dp" />
+
+        <!-- VALOR NUMÉRICO -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Valor numérico:"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/etValor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:hint="0.00 - 4.00"
+            android:textSize="14sp" />
+
+        <!-- NIVEL DE DESEMPEÑO -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nivel de desempeño alcanzado:"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/etNivel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:hint="Excelente, Notable, Bueno, Suficiente, Insuficiente"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+
+    </LinearLayout>
+
+</ScrollView>

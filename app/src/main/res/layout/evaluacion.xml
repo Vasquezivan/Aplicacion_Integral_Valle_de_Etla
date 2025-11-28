@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- ===================== ENCABEZADO CON TU FONDO ===================== -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@drawable/login">
+
+            <ImageView
+                android:id="@+id/logoSep"
+                android:layout_width="120dp"
+                android:layout_height="70dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/sep_logo"
+                android:adjustViewBounds="true" />
+
+            <ImageView
+                android:id="@+id/logoTecnm"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/tecnm_logo"
+                android:adjustViewBounds="true" />
+
+            <ImageView
+                android:id="@+id/logoItve"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/logo_itve"
+                android:adjustViewBounds="true" />
+
+        </RelativeLayout>
+
+        <!-- ===================== BARRA AZUL ===================== -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#061B82"
+            android:text="Evaluación de actividad Complementaria"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:textSize="17sp"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp" />
+
+        <!-- ===================== CONTENIDO ===================== -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- CAMPOS DEL ESTUDIANTE -->
+            <TextView android:text="Nombre del Estudiante" android:textStyle="bold" />
+            <EditText
+                android:id="@+id/etNombre"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:hint="Nombre completo"
+                android:background="#FFFFFF"
+                android:padding="10dp" />
+
+            <TextView android:text="Actividad Cultural y/o Deportiva" android:textStyle="bold" android:layout_marginTop="12dp"/>
+            <EditText
+                android:id="@+id/etActividad"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:hint="Ej. Basquetbol"
+                android:background="#FFFFFF"
+                android:padding="10dp" />
+
+            <TextView android:text="Periodo de Realización" android:textStyle="bold" android:layout_marginTop="12dp"/>
+            <EditText
+                android:id="@+id/etPeriodo"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="#FFFFFF"
+                android:padding="10dp"
+                android:hint="Ej. enero - junio 2025" />
+
+            <!-- ===================== PREGUNTA 1 ===================== -->
+            <TextView
+                android:text="1. Cumple en tiempo y forma con las actividades encomendadas alcanzando los objetivos."
+                android:textStyle="bold"
+                android:layout_marginTop="20dp" />
+
+            <RadioGroup android:id="@+id/p1">
+                <RadioButton android:text="Insuficiente" />
+                <RadioButton android:text="Suficiente" />
+                <RadioButton android:text="Bueno" />
+                <RadioButton android:text="Notable" />
+                <RadioButton android:text="Excelente" />
+            </RadioGroup>
+
+            <!-- ===================== PREGUNTA 2 ===================== -->
+            <TextView
+                android:text="2. Trabaja en equipo y se adapta a nuevas situaciones."
+                android:textStyle="bold"
+                android:layout_marginTop="20dp" />
+
+            <RadioGroup android:id="@+id/p2">
+                <RadioButton android:text="Insuficiente" />
+                <RadioButton android:text="Suficiente" />
+                <RadioButton android:text="Bueno" />
+                <RadioButton android:text="Notable" />
+                <RadioButton android:text="Excelente" />
+            </RadioGroup>
+
+            <!-- ===================== PREGUNTA 3 ===================== -->
+            <TextView
+                android:text="3. Muestra liderazgo en las actividades encomendadas."
+                android:textStyle="bold"
+                android:layout_marginTop="20dp" />
+
+            <RadioGroup android:id="@+id/p3">
+                <RadioButton android:text="Insuficiente" />
+                <RadioButton android:text="Suficiente" />
+                <RadioButton android:text="Bueno" />
+                <RadioButton android:text="Notable" />
+                <RadioButton android:text="Excelente" />
+            </RadioGroup>
+
+            <!-- ===================== PREGUNTA 4 ===================== -->
+            <TextView
+                android:text="4. Organiza su tiempo y trabaja de manera proactiva."
+                android:textStyle="bold"
+                android:layout_marginTop="20dp" />
+
+            <RadioGroup android:id="@+id/p4">
+                <RadioButton android:text="Insuficiente" />
+                <RadioButton android:text="Suficiente" />
+                <RadioButton android:text="Bueno" />
+                <RadioButton android:text="Notable" />
+                <RadioButton android:text="Excelente" />
+            </RadioGroup>
+
+            <!-- ===================== PREGUNTA 5 ===================== -->
+            <TextView
+                android:text="5. Interpreta la realidad y se sensibiliza aportando soluciones a la problemática con la actividad Cultural y/o Deportiva."
+                android:textStyle="bold"
+                android:layout_marginTop="20dp" />
+
+            <RadioGroup android:id="@+id/p5">
+                <RadioButton android:text="Insuficiente" />
+                <RadioButton android:text="Suficiente" />
+                <RadioButton android:text="Bueno" />
+                <RadioButton android:text="Notable" />
+                <RadioButton android:text="Excelente" />
+            </RadioGroup>
+
+            <!-- ===================== PREGUNTA 6 ===================== -->
+            <TextView
+                android:text="6. Realiza sugerencias innovadoras para beneficio o mejora del programa en el que participa."
+                android:textStyle="bold"
+                android:layout_marginTop="20dp" />
+
+            <RadioGroup android:id="@+id/p6">
+                <RadioButton android:text="Insuficiente" />
+                <RadioButton android:text="Suficiente" />
+                <RadioButton android:text="Bueno" />
+                <RadioButton android:text="Notable" />
+                <RadioButton android:text="Excelente" />
+            </RadioGroup>
+
+            <!-- ===================== PREGUNTA 7 ===================== -->
+            <TextView
+                android:text="7. Tiene iniciativa para ayudar en las actividades encomendadas y muestra espíritu de servicio."
+                android:textStyle="bold"
+                android:layout_marginTop="20dp" />
+
+            <RadioGroup android:id="@+id/p7">
+                <RadioButton android:text="Insuficiente" />
+                <RadioButton android:text="Suficiente" />
+                <RadioButton android:text="Bueno" />
+                <RadioButton android:text="Notable" />
+                <RadioButton android:text="Excelente" />
+            </RadioGroup>
+
+            <!-- ===================== BOTONES ===================== -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingTop="20dp">
+
+                <Button
+                    android:id="@+id/btnCompartir"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:text="Compartir"
+                    android:backgroundTint="#1976D2"
+                    android:textColor="#FFFFFF"
+                    android:paddingLeft="25dp"
+                    android:paddingRight="25dp" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/btnConstancia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:text="Ver Constancia"
+                    android:backgroundTint="#00C853"
+                    android:textColor="#FFFFFF"
+                    android:paddingLeft="25dp"
+                    android:paddingRight="25dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- ===================== PIE DE PÁGINA ===================== -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:text="© 2025 Instituto Tecnológico del Valle de Etla. Todos los derechos reservados."
+            android:textColor="#FFFFFF"
+            android:background="#061B82"
+            android:textSize="11sp" />
+
+    </LinearLayout>
+
+</ScrollView>

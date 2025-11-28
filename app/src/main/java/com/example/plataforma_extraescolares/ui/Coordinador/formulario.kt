@@ -30,25 +30,37 @@ class formulario : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Inicialización de vistas
         btnCompartir = view.findViewById(R.id.btnCompartir)
         btnVerConstancia = view.findViewById(R.id.btnVerConstancia)
         imgVolver = view.findViewById(R.id.imgVolver)
+
         rgPregunta1 = view.findViewById(R.id.rgPregunta1)
         rgPregunta9 = view.findViewById(R.id.rgPregunta9)
         rgPregunta10 = view.findViewById(R.id.rgPregunta10)
 
-        imgVolver.setOnClickListener { parentFragmentManager.popBackStack() }
+        // Botón volver
+        imgVolver.setOnClickListener {
+            parentFragmentManager.popBackStack()
+        }
 
+        // Botones principales
         btnCompartir.setOnClickListener { compartirEvaluacion() }
         btnVerConstancia.setOnClickListener { mostrarImagenConstancia() }
 
+        // Respuestas predeterminadas
         rgPregunta1.check(R.id.rbP1Suficiente)
         rgPregunta9.check(R.id.rbP9Suficiente)
         rgPregunta10.check(R.id.rbP10Suficiente)
     }
 
+    // ==========================================================
+    // MOSTRAR IMAGEN DE CONSTANCIA
+    // ==========================================================
     private fun mostrarImagenConstancia() {
-        val dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_imagen_constancia, null)
+        val dialogView = LayoutInflater.from(requireContext())
+            .inflate(R.layout.dialog_imagen_constancia, null)
+
         val imageView = dialogView.findViewById<ImageView>(R.id.imgConstancia)
         imageView.setImageResource(R.drawable.constancia1)
 
@@ -59,26 +71,39 @@ class formulario : Fragment() {
             .show()
     }
 
+    // ==========================================================
+    // COMPARTIR EVALUACIÓN
+    // ==========================================================
     private fun compartirEvaluacion() {
         if (rgPregunta1.checkedRadioButtonId != -1 &&
             rgPregunta9.checkedRadioButtonId != -1 &&
             rgPregunta10.checkedRadioButtonId != -1
         ) {
-            val datos = "Evaluación: ${obtenerRespuesta(rgPregunta1)} | ${obtenerRespuesta(rgPregunta9)} | ${obtenerRespuesta(rgPregunta10)}"
-            val intent = Intent().apply {
-                action = Intent.ACTION_SEND
+            val datos = """
+                Evaluación:
+                Pregunta 1: ${obtenerRespuesta(rgPregunta1)}
+                Pregunta 9: ${obtenerRespuesta(rgPregunta9)}
+                Pregunta 10: ${obtenerRespuesta(rgPregunta10)}
+            """.trimIndent()
+
+            val intent = Intent(Intent.ACTION_SEND).apply {
                 putExtra(Intent.EXTRA_TEXT, datos)
                 type = "text/plain"
             }
             startActivity(Intent.createChooser(intent, "Compartir evaluación"))
         } else {
-            view?.let { Snackbar.make(it, "Por favor responde todas las preguntas", Snackbar.LENGTH_SHORT).show() }
+            view?.let {
+                Snackbar.make(it, "Por favor responde todas las preguntas", Snackbar.LENGTH_SHORT).show()
+            }
         }
     }
 
+    // ==========================================================
+    // OBTENER RESPUESTA DE RADIOGROUP
+    // ==========================================================
     private fun obtenerRespuesta(rg: RadioGroup): String {
         val checkedId = rg.checkedRadioButtonId
-        val radio: RadioButton? = view?.findViewById(checkedId)
-        return radio?.text?.toString() ?: "No respondida"
+        val radio = requireView().findViewById<RadioButton>(checkedId)
+        return radio.text.toString()
     }
 }

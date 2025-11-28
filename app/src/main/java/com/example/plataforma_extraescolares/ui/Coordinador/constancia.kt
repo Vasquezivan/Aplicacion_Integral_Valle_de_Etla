@@ -17,30 +17,21 @@ class constancia : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.constancia, container, false)
 
-        val btnEditar = view.findViewById<Button>(R.id.btnEditar)
-        val btnEvaluar = view.findViewById<Button>(R.id.btnEvaluar)
-
-        // Botón para abrir diálogo de edición
-        btnEditar.setOnClickListener {
-            mostrarDialogoEditarEstudiante()
-        }
-
-        // Botón para abrir fragment de formulario
-        btnEvaluar.setOnClickListener {
-            abrirFormulario()
-        }
-
-        return view
+        // Tu layout actualizado (SIN btnEvaluar)
+        return inflater.inflate(R.layout.constancia, container, false)
     }
 
-    private fun abrirFormulario() {
-        // Abrir fragment formulario dentro del mismo NavHostFragment
-        parentFragmentManager.beginTransaction()
-            .replace(R.id.nav_host_fragment_content_coordinador, formulario())
-            .addToBackStack("formulario")
-            .commit()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Si tu nuevo diseño YA NO tiene btnEditar, elimina estas líneas
+        val btnEditar = view.findViewById<Button?>(R.id.btnEditar)
+
+        // Si existe btnEditar, funciona. Si no, no hace nada.
+        btnEditar?.setOnClickListener {
+            mostrarDialogoEditarEstudiante()
+        }
     }
 
     private fun mostrarDialogoEditarEstudiante() {
@@ -67,16 +58,26 @@ class constancia : Fragment() {
             val carrera = etCarrera.text.toString().trim()
             val semestre = etSemestre.text.toString().trim()
 
-            if (nombre.isEmpty() || noControl.isEmpty() || carrera.isEmpty() || semestre.isEmpty()) {
-                Toast.makeText(requireContext(), "Completa todos los campos", Toast.LENGTH_SHORT).show()
+            if (nombre.isEmpty() || noControl.isEmpty() ||
+                carrera.isEmpty() || semestre.isEmpty()
+            ) {
+                Toast.makeText(
+                    requireContext(),
+                    "Completa todos los campos",
+                    Toast.LENGTH_SHORT
+                ).show()
                 return@setOnClickListener
             }
 
-            Toast.makeText(requireContext(), "Datos guardados:\n$nombre, $noControl, $carrera, $semestre", Toast.LENGTH_LONG).show()
+            Toast.makeText(
+                requireContext(),
+                "Datos guardados:\n$nombre, $noControl, $carrera, $semestre",
+                Toast.LENGTH_LONG
+            ).show()
+
             dialog.dismiss()
         }
 
         dialog.show()
-        dialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
     }
 }
