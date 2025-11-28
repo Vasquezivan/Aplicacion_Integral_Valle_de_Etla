@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- ENCABEZADO PRINCIPAL -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:padding="20dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Evaluación de actividad Complementaria"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="#1A5276"
+                android:paddingBottom="16dp" />
+
+            <!-- INFORMACIÓN DEL ESTUDIANTE -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nombre del Estudiante"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:textColor="#333333" />
+
+            <TextView
+                android:id="@+id/tvStudentName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Laura González Hernandez"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                android:paddingBottom="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No Control"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:textColor="#333333" />
+
+            <TextView
+                android:id="@+id/tvControlNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2347842"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                android:paddingBottom="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Carrera"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:textColor="#333333" />
+
+            <TextView
+                android:id="@+id/tvCareer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ingeniería Civil"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                android:paddingBottom="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Semestre"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:textColor="#333333" />
+
+            <TextView
+                android:id="@+id/tvSemester"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Quinto"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                android:paddingBottom="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Actividad Complementaria"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:textColor="#333333" />
+
+            <TextView
+                android:id="@+id/tvActivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Basquetbol"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                android:paddingBottom="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Periodo de Realización"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:textColor="#333333" />
+
+            <TextView
+                android:id="@+id/tvPeriod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="enero – junio 2025"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                android:paddingBottom="16dp" />
+
+            <!-- PREGUNTA 1 - FIEL A LA IMAGEN -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. Cumple en tiempo y forma con las actividades encomendadas alcanzando los objetivos"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:paddingBottom="12dp" />
+
+            <!-- TABLA DE OPCIONES COMO EN LA IMAGEN -->
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*"
+                android:paddingBottom="16dp">
+
+                <!-- Fila Insuficiente -->
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Insuficiente"
+                        android:textSize="14sp"
+                        android:padding="8dp" />
+
+                    <RadioButton
+                        android:id="@+id/rbInsuficiente"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center" />
+
+                </TableRow>
+
+                <!-- Fila Suficiente -->
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F8F9FA">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Suficiente"
+                        android:textSize="14sp"
+                        android:padding="8dp" />
+
+                    <RadioButton
+                        android:id="@+id/rbSuficiente"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center" />
+
+                </TableRow>
+
+                <!-- Fila Casi Nada -->
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Casi Nada"
+                        android:textSize="14sp"
+                        android:padding="8dp" />
+
+                    <RadioButton
+                        android:id="@+id/rbCasiNada"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center" />
+
+                </TableRow>
+
+                <!-- Fila Nada -->
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F8F9FA">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Nada"
+                        android:textSize="14sp"
+                        android:padding="8dp" />
+
+                    <RadioButton
+                        android:id="@+id/rbNada"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center" />
+
+                </TableRow>
+
+            </TableLayout>
+
+            <!-- FOOTER PRIMERA SECCIÓN -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="© 2025 Instituto Tecnológico del Valle de Ella. Todos los derechos reservados."
+                android:textSize="10sp"
+                android:gravity="center"
+                android:textColor="#666666"
+                android:paddingTop="8dp" />
+
+        </LinearLayout>
+
+        <!-- SEGUNDA EVALUACIÓN -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:padding="20dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Evaluación de actividad Complementaria"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="#1A5276"
+                android:paddingBottom="16dp" />
+
+            <!-- PREGUNTA 9 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="9. ¿Qué tan comprometido(s) estuviste con la actividad durante todo el periodo?"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:paddingBottom="12dp" />
+
+            <!-- TABLA DE OPCIONES PREGUNTA 9 -->
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*"
+                android:paddingBottom="16dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Insuficiente"
+                        android:textSize="14sp"
+                        android:padding="8dp" />
+
+                    <RadioButton
+                        android:id="@+id/rbInsuficiente9"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F8F9FA">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Suficiente"
+                        android:textSize="14sp"
+                        android:padding="8dp" />
+
+                    <RadioButton
+                        android:id="@+id/rbSuficiente9"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Casi Nada"
+                        android:textSize="14sp"
+                        android:padding="8dp" />
+
+                    <RadioButton
+                        android:id="@+id/rbCasiNada9"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F8F9FA">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Nada"
+                        android:textSize="14sp"
+                        android:padding="8dp" />
+
+                    <RadioButton
+                        android:id="@+id/rbNada9"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center" />
+
+                </TableRow>
+
+            </TableLayout>
+
+            <!-- PREGUNTA 10 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="10. ¿Cumplió con el mínimo de asistencia y participación requerido para ser acreedor(a) a la constancia?"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:paddingBottom="12dp" />
+
+            <!-- TABLA DE OPCIONES PREGUNTA 10 -->
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*"
+                android:paddingBottom="16dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Insuficiente"
+                        android:textSize="14sp"
+                        android:padding="8dp" />
+
+                    <RadioButton
+                        android:id="@+id/rbInsuficiente10"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F8F9FA">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Suficiente"
+                        android:textSize="14sp"
+                        android:padding="8dp" />
+
+                    <RadioButton
+                        android:id="@+id/rbSuficiente10"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Casi Nada"
+                        android:textSize="14sp"
+                        android:padding="8dp" />
+
+                    <RadioButton
+                        android:id="@+id/rbCasiNada10"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F8F9FA">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Nada"
+                        android:textSize="14sp"
+                        android:padding="8dp" />
+
+                    <RadioButton
+                        android:id="@+id/rbNada10"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center" />
+
+                </TableRow>
+
+            </TableLayout>
+
+            <!-- BOTONES DE ACCIÓN -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:paddingTop="8dp">
+
+                <Button
+                    android:id="@+id/btnCompartir"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Compartir"
+                    android:textAllCaps="false"
+                    android:background="@android:color/transparent"
+                    android:textColor="#1A5276"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="20dp"
+                    android:background="#DDDDDD"
+                    android:layout_marginHorizontal="8dp" />
+
+                <Button
+                    android:id="@+id/btnVerConstancia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ver Constancia"
+                    android:textAllCaps="false"
+                    android:background="@android:color/transparent"
+                    android:textColor="#1A5276"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- FOOTER SEGUNDA SECCIÓN -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="© 2025 Instituto Tecnológico del Valle de Ella. Todos los derechos reservados."
+                android:textSize="10sp"
+                android:gravity="center"
+                android:textColor="#666666"
+                android:paddingTop="16dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

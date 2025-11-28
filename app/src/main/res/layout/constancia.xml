@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- ================== ENCABEZADO ================== -->
+        <!-- ENCABEZADO -->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="120dp"
@@ -42,7 +42,7 @@
 
         </RelativeLayout>
 
-        <!-- ================== BARRA AZUL ================== -->
+        <!-- BARRA AZUL -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="55dp"
@@ -53,7 +53,7 @@
             android:textColor="@android:color/white"
             android:textStyle="bold" />
 
-        <!-- ================== TÍTULO DE LA ACTIVIDAD ================== -->
+        <!-- TITULO -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="5dp" />
 
-        <!-- ================== DESCRIPCIÓN ================== -->
+        <!-- DESCRIPCION -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -81,7 +81,7 @@
             android:textSize="14sp"
             android:gravity="center" />
 
-        <!-- ================== BARRA DE OPCIONES ================== -->
+        <!-- BARRA DE OPCIONES -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="55dp"
@@ -110,7 +110,7 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <!-- ================== BARRA DE BÚSQUEDA ================== -->
+        <!-- BUSCADOR -->
         <EditText
             android:id="@+id/etBuscar"
             android:layout_width="match_parent"
@@ -120,7 +120,7 @@
             android:padding="12dp"
             android:drawableStart="@android:drawable/ic_menu_search" />
 
-        <!-- ================== TABLA DE ESTUDIANTES ================== -->
+        <!-- ENCABEZADO TABLA -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -165,13 +165,13 @@
                 android:layout_height="wrap_content" />
         </LinearLayout>
 
-        <!-- Aquí van los estudiantes -->
-        <!-- ======= ESTUDIANTE EJEMPLO ====== -->
+        <!-- ALUMNO EJEMPLO -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:orientation="horizontal"
             android:padding="10dp"
+            android:gravity="center_vertical"
             android:background="#FFFFFF">
 
             <CheckBox
@@ -203,16 +203,17 @@
                 android:layout_height="wrap_content" />
 
             <Button
-                android:text="Evaluar"
-                android:backgroundTint="#4CAF50"
-                android:textColor="@android:color/white"
-                android:textStyle="bold"
+                android:id="@+id/btnEvaluar"
                 android:layout_width="80dp"
-                android:layout_height="40dp" />
+                android:layout_height="40dp"
+                android:text="Evaluar"
+                android:backgroundTint="#2196F3"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
-        <!-- ================== PIE DE PÁGINA ================== -->
+        <!-- PIE -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"

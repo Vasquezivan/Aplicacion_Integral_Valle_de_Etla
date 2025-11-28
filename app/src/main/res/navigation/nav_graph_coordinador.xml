@@ -33,5 +33,11 @@
         android:name="com.example.plataforma_extraescolares.ui.Coordinador.resultados"
         android:label="resultado"
         tools:layout="@layout/resultados" />
+    <fragment
+        android:id="@+id/nav_evaluacion"
+        android:name="com.example.plataforma_extraescolares.ui.Coordinador.EvaluacionFragment"
+        android:label="Evaluación"
+        tools:layout="@layout/fragment_evaluacion" />
+
 
 </navigation>

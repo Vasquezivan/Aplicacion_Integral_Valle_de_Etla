@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.plataforma_extraescolares.R
 
 class constancia : Fragment() {
@@ -17,20 +18,24 @@ class constancia : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        // Tu layout actualizado (SIN btnEvaluar)
         return inflater.inflate(R.layout.constancia, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Si tu nuevo diseño YA NO tiene btnEditar, elimina estas líneas
+        // 🔹 Botón EDITAR (el que ya tenías)
         val btnEditar = view.findViewById<Button?>(R.id.btnEditar)
-
-        // Si existe btnEditar, funciona. Si no, no hace nada.
         btnEditar?.setOnClickListener {
             mostrarDialogoEditarEstudiante()
+        }
+
+        // 🔹 Botón EVALUAR (NUEVO)
+        val btnEvaluar = view.findViewById<Button>(R.id.btnEvaluar)
+
+        btnEvaluar.setOnClickListener {
+            // Acción que manda al nuevo fragment de evaluación
+            findNavController().navigate(R.id.nav_evaluacion)
         }
     }
 
