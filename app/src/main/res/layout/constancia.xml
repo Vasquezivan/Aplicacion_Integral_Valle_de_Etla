@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- ================== ENCABEZADO ================== -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@drawable/encabezado">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="70dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/sep_logo"
+                android:adjustViewBounds="true" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/tecnm_logo"
+                android:adjustViewBounds="true" />
+
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="45dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/logo_itve"
+                android:adjustViewBounds="true" />
+
+        </RelativeLayout>
+
+        <!-- ================== BARRA AZUL ================== -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="#061B82"
+            android:text="Centro de Investigación y Desarrollo de Energías Renovables en Unión Hidalgo"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <!-- ================== TÍTULO DE LA ACTIVIDAD ================== -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Atletismo"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#061B82"
+            android:gravity="center"
+            android:layout_marginTop="15dp" />
+
+        <View
+            android:layout_width="100dp"
+            android:layout_height="3dp"
+            android:background="#0033CC"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp" />
+
+        <!-- ================== DESCRIPCIÓN ================== -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Participa en sesiones de resistencia, velocidad y técnica de salto. Ideal para quienes disfrutan del reto individual y las competencias."
+            android:padding="20dp"
+            android:textColor="#444444"
+            android:textSize="14sp"
+            android:gravity="center" />
+
+        <!-- ================== BARRA DE OPCIONES ================== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="#FFFFFF"
+            android:padding="8dp"
+            android:elevation="3dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Estudiantes Registrados"
+                android:textStyle="bold"
+                android:textColor="#061B82"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btnAgregar"
+                android:layout_width="110dp"
+                android:layout_height="45dp"
+                android:text="Agregar"
+                android:textColor="@android:color/white"
+                android:backgroundTint="#2196F3"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- ================== BARRA DE BÚSQUEDA ================== -->
+        <EditText
+            android:id="@+id/etBuscar"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_margin="15dp"
+            android:hint="Buscar Estudiante"
+            android:padding="12dp"
+            android:drawableStart="@android:drawable/ic_menu_search" />
+
+        <!-- ================== TABLA DE ESTUDIANTES ================== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#061B82"
+            android:padding="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:text="Nombre del Estudiante"
+                android:textColor="@android:color/white"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="No Control"
+                android:textColor="@android:color/white"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="Carrera"
+                android:textColor="@android:color/white"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="Semestre"
+                android:textColor="@android:color/white"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="Acción"
+                android:textColor="@android:color/white"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- Aquí van los estudiantes -->
+        <!-- ======= ESTUDIANTE EJEMPLO ====== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:background="#FFFFFF">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="Laura González"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="2347842"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="ISC"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="Sexto"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:text="Evaluar"
+                android:backgroundTint="#4CAF50"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:layout_width="80dp"
+                android:layout_height="40dp" />
+
+        </LinearLayout>
+
+        <!-- ================== PIE DE PÁGINA ================== -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="© 2025 Instituto Tecnológico del Valle de Etla. Todos los derechos reservados."
+            android:textColor="@android:color/white"
+            android:background="#061B82"
+            android:textSize="11sp" />
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,37 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.plataforma_extraescolares.ui.home.HomeCoordinadorFragment"
+        android:label="Inicio"
+        tools:layout="@layout/fragment_home_coordinador" />
+
+    <fragment
+        android:id="@+id/nav_vestudiantes"
+        android:name="com.example.plataforma_extraescolares.ui.Coordinador.vestudiantes"
+        android:label="Ver Estudiantes"
+        tools:layout="@layout/vestudiantes" />
+
+    <fragment
+        android:id="@+id/nav_constancias"
+        android:name="com.example.plataforma_extraescolares.ui.Coordinador.constancia"
+        android:label="Constancia"
+        tools:layout="@layout/constancia" />
+
+    <fragment
+        android:id="@+id/nav_informe"
+        android:name="com.example.plataforma_extraescolares.ui.Coordinador.informe"
+        android:label="informe"
+        tools:layout="@layout/fragment_informe" />
+
+    <fragment
+        android:id="@+id/nav_resultados"
+        android:name="com.example.plataforma_extraescolares.ui.Coordinador.resultados"
+        android:label="resultado"
+        tools:layout="@layout/resultados" />
+
+</navigation>

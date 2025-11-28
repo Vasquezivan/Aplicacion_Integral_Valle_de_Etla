@@ -1,0 +1,13 @@
+<resources>
+    <!-- Tema principal sin ActionBar -->
+    <style name="Theme.PlataformaExtraescolares" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Colores de la app -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Fondo de ventana y texto principal -->
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:textColorPrimary">@color/black</item>
+    </style>
+</resources>

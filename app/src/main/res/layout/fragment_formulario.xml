@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".ui.formulario.formulario">
+
+    <ScrollView
+        android:id="@+id/scrollPrincipal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/contenedorPie"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:background="#003366">
+
+                <ImageView
+                    android:id="@+id/imgVolver"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@android:drawable/ic_menu_revert"
+                    android:contentDescription="Volver"
+                    android:tint="@android:color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvTitulo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Evaluación de Actividad Complementaria"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:gravity="center"
+                    app:layout_constraintStart_toEndOf="@+id/imgVolver"
+                    app:layout_constraintEnd_toStartOf="@+id/imgLogoEdu"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/imgLogoTecnm"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="8dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/tecnm_logo"
+                    android:contentDescription="Logo TecNM"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/imgLogoEdu"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="8dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/sep_logo"
+                    android:contentDescription="Logo Educación"
+                    app:layout_constraintEnd_toStartOf="@+id/imgLogoTecnm"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Información del estudiante -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre del Estudiante"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"/>
+                <EditText
+                    android:id="@+id/etNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Laura González Hernandez"
+                    android:textColor="#555555"
+                    android:textSize="16sp"
+                    android:background="@drawable/edittext_border_bottom"
+                    android:paddingBottom="4dp"
+                    android:layout_marginBottom="12dp"
+                    android:focusable="false"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="No Control"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"/>
+                <EditText
+                    android:id="@+id/etNoControl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2347842"
+                    android:textColor="#555555"
+                    android:textSize="16sp"
+                    android:background="@drawable/edittext_border_bottom"
+                    android:paddingBottom="4dp"
+                    android:layout_marginBottom="12dp"
+                    android:focusable="false"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Carrera"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"/>
+                <EditText
+                    android:id="@+id/etCarrera"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ingeniería Civil"
+                    android:textColor="#555555"
+                    android:textSize="16sp"
+                    android:background="@drawable/edittext_border_bottom"
+                    android:paddingBottom="4dp"
+                    android:layout_marginBottom="12dp"
+                    android:focusable="false"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Semestre"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"/>
+                <EditText
+                    android:id="@+id/etSemestre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Quinto"
+                    android:textColor="#555555"
+                    android:textSize="16sp"
+                    android:background="@drawable/edittext_border_bottom"
+                    android:paddingBottom="4dp"
+                    android:layout_marginBottom="12dp"
+                    android:focusable="false"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Actividad Complementaria"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"/>
+                <EditText
+                    android:id="@+id/etActividad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Basquetbol"
+                    android:textColor="#555555"
+                    android:textSize="16sp"
+                    android:background="@drawable/edittext_border_bottom"
+                    android:paddingBottom="4dp"
+                    android:layout_marginBottom="12dp"
+                    android:focusable="false"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Periodo de Realización"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"/>
+                <EditText
+                    android:id="@+id/etPeriodo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="enero - junio 2025"
+                    android:textColor="#555555"
+                    android:textSize="16sp"
+                    android:background="@drawable/edittext_border_bottom"
+                    android:paddingBottom="4dp"
+                    android:layout_marginBottom="24dp"
+                    android:focusable="false"/>
+
+                <!-- Preguntas de evaluación -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1. Cumple en tiempo y forma con las actividades encomendadas alcanzando los objetivos"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <RadioGroup
+                    android:id="@+id/rgPregunta1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+
+                    <RadioButton
+                        android:id="@+id/rbP1Insuficiente"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Insuficiente"/>
+                    <RadioButton
+                        android:id="@+id/rbP1Suficiente"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Suficiente"/>
+                    <RadioButton
+                        android:id="@+id/rbP1CasiNada"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Casi Nada"/>
+                    <RadioButton
+                        android:id="@+id/rbP1Nada"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nada"/>
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="9. ¿Qué tan comprometido(a) estuviste con la actividad durante todo el periodo?"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <RadioGroup
+                    android:id="@+id/rgPregunta9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+
+                    <RadioButton
+                        android:id="@+id/rbP9Insuficiente"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Insuficiente"/>
+                    <RadioButton
+                        android:id="@+id/rbP9Suficiente"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Suficiente"/>
+                    <RadioButton
+                        android:id="@+id/rbP9CasiNada"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Casi Nada"/>
+                    <RadioButton
+                        android:id="@+id/rbP9Nada"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nada"/>
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="10. ¿Cumplió con el mínimo de asistencia y participación requerida para ser acreedor(a) a la constancia?"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <RadioGroup
+                    android:id="@+id/rgPregunta10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp">
+
+                    <RadioButton
+                        android:id="@+id/rbP10Insuficiente"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Insuficiente"/>
+                    <RadioButton
+                        android:id="@+id/rbP10Suficiente"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Suficiente"/>
+                    <RadioButton
+                        android:id="@+id/rbP10CasiNada"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Casi Nada"/>
+                    <RadioButton
+                        android:id="@+id/rbP10Nada"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nada"/>
+                </RadioGroup>
+
+                <!-- Botones de acción -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginBottom="16dp">
+
+                    <Button
+                        android:id="@+id/btnCompartir"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:text="Compartir"
+                        android:textColor="@android:color/white"
+                        android:background="@drawable/rounded_button_green"
+                        android:padding="12dp"/>
+
+                    <Button
+                        android:id="@+id/btnVerConstancia"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:text="Ver Constancia"
+                        android:textColor="@android:color/white"
+                        android:background="@drawable/rounded_button_green"
+                        android:padding="12dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/contenedorPie"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000080"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="© 2025 Instituto Tecnológico del Valle de Etla. Todos los derechos reservados."
+                android:textColor="@android:color/white"
+                android:textSize="10sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
