@@ -57,7 +57,7 @@ class LoginActivity : AppCompatActivity() {
                 finish()
 
                 // VALIDACIÓN DE COORDINADOR
-            } else if (usuario == "coordinador" && password == "5678") {
+            } else if (usuario == "coordinador_VDE" && password == "5678") {
                 Toast.makeText(this, "Acceso como Coordinador", Toast.LENGTH_SHORT).show()
 
                 val intent = Intent(this, CoordinadorActivity::class.java)
@@ -65,7 +65,35 @@ class LoginActivity : AppCompatActivity() {
                 finish()
 
                 // CUALQUIER OTRO USUARIO ES INCORRECTO
-            } else {
+            }
+            else if (usuario == "coordinador_DV" && password == "2220075") {
+                Toast.makeText(this, "Acceso como Coordinador", Toast.LENGTH_SHORT).show()
+
+                val intent = Intent(this, CoordinadorActivity::class.java)
+                startActivity(intent)
+                finish()
+
+
+            }
+            else if (usuario == "coordinador_SMT" && password == "2220070") {
+                Toast.makeText(this, "Acceso como Coordinador", Toast.LENGTH_SHORT).show()
+
+                val intent = Intent(this, CoordinadorActivity::class.java)
+                startActivity(intent)
+                finish()
+
+
+            }
+            else if (usuario == "coordinador_UH" && password == "2220071") {
+                Toast.makeText(this, "Acceso como Coordinador", Toast.LENGTH_SHORT).show()
+
+                val intent = Intent(this, CoordinadorActivity::class.java)
+                startActivity(intent)
+                finish()
+
+
+            }
+            else {
                 Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show()
             }
         }
