@@ -1,73 +1,67 @@
 package com.example.plataforma_extraescolares
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import com.example.plataforma_extraescolares.databinding.ActivityCoordinadorBinding
+import com.example.plataforma_extraescolares.databinding.ActivityCoordinadorDvBinding
 import com.google.android.material.navigation.NavigationView
 
-class Dimitrio_Vallejo : AppCompatActivity(){
-    private lateinit var binding: ActivityCoordinadorBinding
-    private lateinit var appBarConfiguration: AppBarConfiguration
+class Dimitrio_Vallejo : AppCompatActivity() {
+
+    private lateinit var binding: ActivityCoordinadorDvBinding
+    private lateinit var toggle: ActionBarDrawerToggle   // <<< IMPORTANTE
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityCoordinadorBinding.inflate(layoutInflater)
+        binding = ActivityCoordinadorDvBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // ✔ Ahora funciona correctamente
-        setSupportActionBar(binding.appBarCoordinador.toolbar)
+        // Toolbar
+        setSupportActionBar(binding.appBarCoordinadorDv.toolbar)
 
+        // Drawer
         val drawerLayout: DrawerLayout = binding.drawerLayout
-        val navController = findNavController(R.id.nav_host_fragment_content_coordinador)
+        val navView: NavigationView = binding.navView
 
-        appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.nav_home,
-                R.id.nav_vestudiantes,
-                R.id.nav_constancias,
-                R.id.nav_resultados,
-                R.id.nav_informe
-            ),
-            drawerLayout
+        // ============================================
+        // 🔥 AQUI ESTÁ LO QUE TE HACÍA FALTA
+        // ============================================
+        toggle = ActionBarDrawerToggle(
+            this,
+            drawerLayout,
+            binding.appBarCoordinadorDv.toolbar,
+            R.string.navigation_drawer_open,
+            R.string.navigation_drawer_close
         )
 
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        binding.navView.setupWithNavController(navController)
+        drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()   // <<< Esto hace aparecer el ICONO del menú
+        // ============================================
 
-        binding.navView.setNavigationItemSelectedListener { menuItem ->
-            handleNavigation(menuItem, navController)
-            binding.drawerLayout.closeDrawers()
+
+        // Listener del menú
+        navView.setNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+
+                R.id.nav_home -> {}
+
+                R.id.nav_vestudiantes_dv -> {}
+
+                R.id.nav_constancias_dv -> {}
+
+                R.id.nav_resultados_dv -> {}
+
+                R.id.nav_informe_dv -> {}
+            }
+
+            drawerLayout.closeDrawers()
             true
         }
     }
 
-    private fun handleNavigation(menuItem: MenuItem, navController: androidx.navigation.NavController) {
-        when (menuItem.itemId) {
-            R.id.nav_home -> navController.navigate(R.id.nav_home) {
-                popUpTo(R.id.nav_home) { inclusive = true }
-            }
-            R.id.nav_vestudiantes -> navController.navigate(R.id.nav_vestudiantes)
-            R.id.nav_constancias -> navController.navigate(R.id.nav_constancias)
-            R.id.nav_resultados -> navController.navigate(R.id.nav_resultados)
-            R.id.nav_informe -> navController.navigate(R.id.nav_informe)
-        }
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        return true
-    }
-
     override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_coordinador)
-        return NavigationUI.navigateUp(navController, appBarConfiguration) || super.onSupportNavigateUp()
+        return true
     }
 }

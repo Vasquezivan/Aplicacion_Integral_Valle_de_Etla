@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_coordinador_dv"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.plataforma_extraescolares.ui.home.HomeCoordinadorDVFragment"
+        android:label="Inicio"
+        tools:layout="@layout/fragment_home_coordinador_dv" />
+
+    <fragment
+        android:id="@+id/nav_vestudiantes_dv"
+        android:name="com.example.plataforma_extraescolares.ui.Coordinador.vestudiantes_dv"
+        android:label="Ver Estudiantes"
+        tools:layout="@layout/vestudiantes_dv" />
+
+    <fragment
+        android:id="@+id/nav_constancias_dv"
+        android:name="com.example.plataforma_extraescolares.ui.Coordinador.constancia_dv"
+        android:label="Constancia"
+        tools:layout="@layout/constancia_dv" />
+
+    <fragment
+        android:id="@+id/nav_resultados_dv"
+        android:name="com.example.plataforma_extraescolares.ui.Coordinador.resultados_dv"
+        android:label="Resultados"
+        tools:layout="@layout/resultados_dv" />
+
+    <fragment
+        android:id="@+id/nav_informe_dv"
+        android:name="com.example.plataforma_extraescolares.ui.Coordinador.informe_dv"
+        android:label="Informe"
+        tools:layout="@layout/fragment_informe_dv" />
+
+</navigation>
