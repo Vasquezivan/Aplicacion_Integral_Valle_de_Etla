@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <!-- Grupo 1: Panel Principal -->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home_ic"
+            android:title="Inicio" />
+    </group>
+
+    <!-- Separador y título para Unidades -->
+    <item
+        android:title="Actividades"
+        android:enabled="false"
+        android:checkable="false" />
+
+    <!-- Grupo 2: Unidades -->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_vestudiantes_dv"
+            android:icon="@drawable/unidades_ic"
+            android:title="Ver estudiantes" />
+
+        <item
+            android:id="@+id/nav_constancias_dv"
+            android:icon="@drawable/unidades_ic"
+            android:title="Constancias" />
+
+        <item
+            android:id="@+id/nav_resultados_dv"
+            android:icon="@drawable/unidades_ic"
+            android:title="Resultados" />
+
+        <item
+            android:id="@+id/nav_informe_dv"
+            android:icon="@drawable/unidades_ic"
+            android:title="Informe" />
+    </group>
+
+    <!-- Separador y título para Administración -->
+    <item
+        android:title="Cambios"
+        android:enabled="false"
+        android:checkable="false" />
+
+    <!-- Grupo 3: Administración -->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_Documentos"
+            android:icon="@drawable/usuario"
+            android:title="documentos" />
+    </group>
+</menu>

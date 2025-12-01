@@ -28,4 +28,5 @@
     <!-- Otros -->
     <string name="action_settings">Settings</string>
     <string name="title_activity_coordinador">CoordinadorActivity</string>
+    <string name="title_activity_coordinador_dv">Coordinador_dvActivity</string>
 </resources>
