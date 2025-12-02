@@ -18,9 +18,8 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:background="#FFA726"
         app:headerLayout="@layout/nav_header_coordinador"
         app:menu="@menu/coordinador" />
-
-
 
 </androidx.drawerlayout.widget.DrawerLayout>
