@@ -40,6 +40,16 @@
             android:exported="false"
             android:label="@string/title_activity_coordinador_dv"
             android:theme="@style/Theme.Plataforma_Extraescolares.NoActionBar" />
+        <activity
+            android:name=".Union_Hidalgo"
+            android:exported="false"
+            android:label="@string/title_activity_coordinador_uh"
+            android:theme="@style/Theme.Plataforma_Extraescolares.NoActionBar" />
+        <activity
+            android:name=".Santa_Maria_Tlahuitoltep"
+            android:exported="false"
+            android:label="@string/title_activity_coordinador_smt"
+            android:theme="@style/Theme.Plataforma_Extraescolares.NoActionBar" />
 
         <activity
             android:name=".ui.Administrador.Actividades_Valle_de_Etla"

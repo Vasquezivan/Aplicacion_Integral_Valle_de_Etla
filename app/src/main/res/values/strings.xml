@@ -29,4 +29,6 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_coordinador">CoordinadorActivity</string>
     <string name="title_activity_coordinador_dv">Coordinador_dvActivity</string>
+    <string name="title_activity_coordinador_uh">Coordinador_uhActivity</string>
+    <string name="title_activity_coordinador_smt">Coordinador_smtActivity</string>
 </resources>

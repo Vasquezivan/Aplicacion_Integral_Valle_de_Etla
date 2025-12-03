@@ -1,0 +1,37 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_coordinador_dv"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.plataforma_extraescolares.ui.home.HomeCoordinadorSMTFragment"
+        android:label="Inicio"
+        tools:layout="@layout/fragment_home_coordinador_smt" />
+
+    <fragment
+        android:id="@+id/nav_vestudiantes_smt"
+        android:name="com.example.plataforma_extraescolares.ui.Coordinador.vestudiantes_smt"
+        android:label="Ver Estudiantes"
+        tools:layout="@layout/vestudiantes_smt" />
+
+    <fragment
+        android:id="@+id/nav_constancias_smt"
+        android:name="com.example.plataforma_extraescolares.ui.Coordinador.constancia_smt"
+        android:label="Constancia"
+        tools:layout="@layout/constancia_smt" />
+
+    <fragment
+        android:id="@+id/nav_resultados_smt"
+        android:name="com.example.plataforma_extraescolares.ui.Coordinador.resultados_smt"
+        android:label="Resultados"
+        tools:layout="@layout/resultados_smt" />
+
+    <fragment
+        android:id="@+id/nav_informe_smt"
+        android:name="com.example.plataforma_extraescolares.ui.Coordinador.informe_smt"
+        android:label="Informe"
+        tools:layout="@layout/fragment_informe_smt" />
+
+</navigation>
