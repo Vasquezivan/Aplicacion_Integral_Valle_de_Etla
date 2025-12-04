@@ -17,7 +17,7 @@ class resultados_dv : Fragment(){
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
         ): View? {
-            val view = inflater.inflate(R.layout.resultados, container, false)
+            val view = inflater.inflate(R.layout.resultados_dv, container, false)
 
             //val btnVerResultados: Button = view.findViewById(R.id.btnVerResultados)
             val btnImprimir: Button = view.findViewById(R.id.btnImprimir)

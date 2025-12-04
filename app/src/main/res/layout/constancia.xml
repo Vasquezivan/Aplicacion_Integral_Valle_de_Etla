@@ -47,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:background="#061B82"
-            android:text="Centro de Investigación y Desarrollo de Energías Renovables en Unión Hidalgo"
+            android:text="Centro de Investigación y Desarrollo de Energías Renovables en Valle de Etla"
             android:gravity="center"
             android:textSize="14sp"
             android:textColor="@android:color/white"
@@ -100,14 +100,6 @@
                 android:textColor="#061B82"
                 android:textSize="14sp" />
 
-            <Button
-                android:id="@+id/btnAgregar"
-                android:layout_width="110dp"
-                android:layout_height="45dp"
-                android:text="Agregar"
-                android:textColor="@android:color/white"
-                android:backgroundTint="#2196F3"
-                android:textStyle="bold" />
         </LinearLayout>
 
         <!-- BUSCADOR -->

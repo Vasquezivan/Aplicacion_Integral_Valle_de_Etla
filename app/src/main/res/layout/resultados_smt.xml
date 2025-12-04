@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context=".ui.vestudiantes_dv">
+    tools:context=".ui.Coordinador.resultados_smt">
 
     <!-- SCROLL PRINCIPAL -->
     <ScrollView
@@ -84,7 +84,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:text="Centro de Investigación y Desarrollo de Energías\nRenovables en Demitrio Vallejo"
+                        android:text="Centro de Investigación y Desarrollo de Energías\nRenovables en Santa Maria Tlahuitepec"
                         android:textColor="@android:color/white"
                         android:textSize="12sp"
                         android:textStyle="bold"/>
@@ -119,7 +119,7 @@
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_marginEnd="12dp"
-                            android:src="@drawable/ic_search"
+                            android:src="@drawable/search"
                             android:contentDescription="Buscar"/>
 
                         <EditText
@@ -127,12 +127,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@android:color/transparent"
-                            android:hint="Buscar Estudiante"
+                            android:hint="Buscar"
                             android:textSize="16sp"/>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- TABLA -->
+                <!-- TABLA DE ESTUDIANTES -->
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="400dp"
@@ -176,10 +176,7 @@
                                         <TextView android:text="2347842" android:padding="12dp" android:minWidth="120dp"/>
                                         <TextView android:text="ISC" android:padding="12dp" android:minWidth="100dp"/>
                                         <TextView android:text="6°" android:padding="12dp" android:minWidth="80dp"/>
-                                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
-                                            <Button android:id="@+id/btnEditar1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Editar" android:backgroundTint="#4CAF50" android:textColor="@android:color/white" android:layout_margin="4dp"/>
-                                            <Button android:id="@+id/btnEliminar1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Eliminar" android:backgroundTint="#F44336" android:textColor="@android:color/white" android:layout_margin="4dp"/>
-                                        </LinearLayout>
+                                        <TextView android:text="Ver Detalles" android:padding="12dp" android:minWidth="150dp"/>
                                     </TableRow>
 
                                     <TableRow android:background="@android:color/white">
@@ -187,10 +184,7 @@
                                         <TextView android:text="2347901" android:padding="12dp"/>
                                         <TextView android:text="IER" android:padding="12dp"/>
                                         <TextView android:text="4°" android:padding="12dp"/>
-                                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
-                                            <Button android:id="@+id/btnEditar2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Editar" android:backgroundTint="#4CAF50" android:textColor="@android:color/white" android:layout_margin="4dp"/>
-                                            <Button android:id="@+id/btnEliminar2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Eliminar" android:backgroundTint="#F44336" android:textColor="@android:color/white" android:layout_margin="4dp"/>
-                                        </LinearLayout>
+                                        <TextView android:text="Ver Detalles" android:padding="12dp"/>
                                     </TableRow>
 
                                     <TableRow android:background="#F8F8F8">
@@ -198,10 +192,7 @@
                                         <TextView android:text="2348002" android:padding="12dp"/>
                                         <TextView android:text="IEM" android:padding="12dp"/>
                                         <TextView android:text="8°" android:padding="12dp"/>
-                                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
-                                            <Button android:id="@+id/btnEditar3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Editar" android:backgroundTint="#4CAF50" android:textColor="@android:color/white" android:layout_margin="4dp"/>
-                                            <Button android:id="@+id/btnEliminar3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Eliminar" android:backgroundTint="#F44336" android:textColor="@android:color/white" android:layout_margin="4dp"/>
-                                        </LinearLayout>
+                                        <TextView android:text="Ver Detalles" android:padding="12dp"/>
                                     </TableRow>
 
                                     <TableRow android:background="@android:color/white">
@@ -209,10 +200,7 @@
                                         <TextView android:text="2348025" android:padding="12dp"/>
                                         <TextView android:text="IIA" android:padding="12dp"/>
                                         <TextView android:text="2°" android:padding="12dp"/>
-                                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
-                                            <Button android:id="@+id/btnEditar4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Editar" android:backgroundTint="#4CAF50" android:textColor="@android:color/white" android:layout_margin="4dp"/>
-                                            <Button android:id="@+id/btnEliminar4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Eliminar" android:backgroundTint="#F44336" android:textColor="@android:color/white" android:layout_margin="4dp"/>
-                                        </LinearLayout>
+                                        <TextView android:text="Ver Detalles" android:padding="12dp"/>
                                     </TableRow>
 
                                     <TableRow android:background="#F8F8F8">
@@ -220,10 +208,7 @@
                                         <TextView android:text="2348044" android:padding="12dp"/>
                                         <TextView android:text="ISC" android:padding="12dp"/>
                                         <TextView android:text="7°" android:padding="12dp"/>
-                                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
-                                            <Button android:id="@+id/btnEditar5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Editar" android:backgroundTint="#4CAF50" android:textColor="@android:color/white" android:layout_margin="4dp"/>
-                                            <Button android:id="@+id/btnEliminar5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Eliminar" android:backgroundTint="#F44336" android:textColor="@android:color/white" android:layout_margin="4dp"/>
-                                        </LinearLayout>
+                                        <TextView android:text="Ver Detalles" android:padding="12dp"/>
                                     </TableRow>
 
                                     <TableRow android:background="@android:color/white">
@@ -231,10 +216,7 @@
                                         <TextView android:text="2348075" android:padding="12dp"/>
                                         <TextView android:text="IER" android:padding="12dp"/>
                                         <TextView android:text="5°" android:padding="12dp"/>
-                                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
-                                            <Button android:id="@+id/btnEditar6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Editar" android:backgroundTint="#4CAF50" android:textColor="@android:color/white" android:layout_margin="4dp"/>
-                                            <Button android:id="@+id/btnEliminar6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Eliminar" android:backgroundTint="#F44336" android:textColor="@android:color/white" android:layout_margin="4dp"/>
-                                        </LinearLayout>
+                                        <TextView android:text="Ver Detalles" android:padding="12dp"/>
                                     </TableRow>
 
                                     <TableRow android:background="#F8F8F8">
@@ -242,10 +224,7 @@
                                         <TextView android:text="2348102" android:padding="12dp"/>
                                         <TextView android:text="IEM" android:padding="12dp"/>
                                         <TextView android:text="3°" android:padding="12dp"/>
-                                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
-                                            <Button android:id="@+id/btnEditar7" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Editar" android:backgroundTint="#4CAF50" android:textColor="@android:color/white" android:layout_margin="4dp"/>
-                                            <Button android:id="@+id/btnEliminar7" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Eliminar" android:backgroundTint="#F44336" android:textColor="@android:color/white" android:layout_margin="4dp"/>
-                                        </LinearLayout>
+                                        <TextView android:text="Ver Detalles" android:padding="12dp"/>
                                     </TableRow>
 
                                     <TableRow android:background="@android:color/white">
@@ -253,10 +232,7 @@
                                         <TextView android:text="2348120" android:padding="12dp"/>
                                         <TextView android:text="IIA" android:padding="12dp"/>
                                         <TextView android:text="9°" android:padding="12dp"/>
-                                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
-                                            <Button android:id="@+id/btnEditar8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Editar" android:backgroundTint="#4CAF50" android:textColor="@android:color/white" android:layout_margin="4dp"/>
-                                            <Button android:id="@+id/btnEliminar8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Eliminar" android:backgroundTint="#F44336" android:textColor="@android:color/white" android:layout_margin="4dp"/>
-                                        </LinearLayout>
+                                        <TextView android:text="Ver Detalles" android:padding="12dp"/>
                                     </TableRow>
 
                                     <TableRow android:background="#F8F8F8">
@@ -264,10 +240,7 @@
                                         <TextView android:text="2348150" android:padding="12dp"/>
                                         <TextView android:text="IER" android:padding="12dp"/>
                                         <TextView android:text="1°" android:padding="12dp"/>
-                                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
-                                            <Button android:id="@+id/btnEditar9" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Editar" android:backgroundTint="#4CAF50" android:textColor="@android:color/white" android:layout_margin="4dp"/>
-                                            <Button android:id="@+id/btnEliminar9" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Eliminar" android:backgroundTint="#F44336" android:textColor="@android:color/white" android:layout_margin="4dp"/>
-                                        </LinearLayout>
+                                        <TextView android:text="Ver Detalles" android:padding="12dp"/>
                                     </TableRow>
 
                                     <TableRow android:background="@android:color/white">
@@ -275,10 +248,7 @@
                                         <TextView android:text="2348188" android:padding="12dp"/>
                                         <TextView android:text="ISC" android:padding="12dp"/>
                                         <TextView android:text="10°" android:padding="12dp"/>
-                                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
-                                            <Button android:id="@+id/btnEditar10" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Editar" android:backgroundTint="#4CAF50" android:textColor="@android:color/white" android:layout_margin="4dp"/>
-                                            <Button android:id="@+id/btnEliminar10" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Eliminar" android:backgroundTint="#F44336" android:textColor="@android:color/white" android:layout_margin="4dp"/>
-                                        </LinearLayout>
+                                        <TextView android:text="Ver Detalles" android:padding="12dp"/>
                                     </TableRow>
 
                                 </TableLayout>
@@ -286,11 +256,38 @@
                         </HorizontalScrollView>
                     </ScrollView>
                 </androidx.cardview.widget.CardView>
+
+                <!-- BOTÓN IMPRIMIR -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#F8F8F8"
+                        android:orientation="vertical"
+                        android:padding="24dp"
+                        android:gravity="center">
+
+                        <Button
+                            android:id="@+id/btnImprimir"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Imprimir"
+                            android:textColor="@android:color/white"
+                            android:background="@drawable/rounded_button_orange"
+                            android:padding="12dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
-    <!-- PIE AZUL FIJO -->
+    <!-- PIE DE PÁGINA -->
     <androidx.cardview.widget.CardView
         android:id="@+id/contenedorPie"
         android:layout_width="0dp"

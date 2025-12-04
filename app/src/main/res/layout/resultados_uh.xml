@@ -1,6 +1,318 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".ui.resultados.resultados">
+
+    <!-- SCROLL PRINCIPAL -->
+    <ScrollView
+        android:id="@+id/scrollPrincipal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/contenedorPie"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- ENCABEZADO -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@drawable/encabezado">
+
+                <ImageView
+                    android:id="@+id/imgSepLogo"
+                    android:layout_width="120dp"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="8dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/sep_logo"
+                    android:contentDescription="Logo SEP"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/imgTecnmLogo"
+                    android:layout_width="45dp"
+                    android:layout_height="30dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/tecnm_logo"
+                    android:contentDescription="Logo TecNM"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/imgLogoItve"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="8dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/logo_itve"
+                    android:contentDescription="Logo ITVE"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- TÍTULO -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#003366">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="Centro de Investigación y Desarrollo de Energías\nRenovables en Unión Hidalgo"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- CONTENIDO -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <!-- BUSCADOR -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="2dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:background="#F8F8F8"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginEnd="12dp"
+                            android:src="@drawable/search"
+                            android:contentDescription="Buscar"/>
+
+                        <EditText
+                            android:id="@+id/etBuscar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:hint="Buscar"
+                            android:textSize="16sp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- TABLA DE ESTUDIANTES -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="4dp">
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scrollbars="vertical">
+
+                        <HorizontalScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:scrollbars="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TableLayout
+                                    android:id="@+id/tablaEstudiantes"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:stretchColumns="0,1,2,3,4">
+
+                                    <!-- ENCABEZADOS -->
+                                    <TableRow android:background="#003366">
+                                        <TextView android:text="Nombre" android:textColor="@android:color/white" android:padding="12dp" android:minWidth="150dp" android:textStyle="bold"/>
+                                        <TextView android:text="No. Control" android:textColor="@android:color/white" android:padding="12dp" android:minWidth="120dp" android:textStyle="bold"/>
+                                        <TextView android:text="Carrera" android:textColor="@android:color/white" android:padding="12dp" android:minWidth="100dp" android:textStyle="bold"/>
+                                        <TextView android:text="Semestre" android:textColor="@android:color/white" android:padding="12dp" android:minWidth="80dp" android:textStyle="bold"/>
+                                        <TextView android:text="Acciones" android:textColor="@android:color/white" android:padding="12dp" android:minWidth="150dp" android:textStyle="bold"/>
+                                    </TableRow>
+
+                                    <!-- FILAS DE EJEMPLO -->
+                                    <TableRow android:background="#F8F8F8">
+                                        <TextView android:text="Laura González" android:padding="12dp" android:minWidth="150dp"/>
+                                        <TextView android:text="2347842" android:padding="12dp" android:minWidth="120dp"/>
+                                        <TextView android:text="ISC" android:padding="12dp" android:minWidth="100dp"/>
+                                        <TextView android:text="6°" android:padding="12dp" android:minWidth="80dp"/>
+                                        <TextView android:text="Ver Detalles" android:padding="12dp" android:minWidth="150dp"/>
+                                    </TableRow>
+
+                                    <TableRow android:background="@android:color/white">
+                                        <TextView android:text="Carlos Rodríguez" android:padding="12dp"/>
+                                        <TextView android:text="2347901" android:padding="12dp"/>
+                                        <TextView android:text="IER" android:padding="12dp"/>
+                                        <TextView android:text="4°" android:padding="12dp"/>
+                                        <TextView android:text="Ver Detalles" android:padding="12dp"/>
+                                    </TableRow>
+
+                                    <TableRow android:background="#F8F8F8">
+                                        <TextView android:text="Ana López" android:padding="12dp"/>
+                                        <TextView android:text="2348002" android:padding="12dp"/>
+                                        <TextView android:text="IEM" android:padding="12dp"/>
+                                        <TextView android:text="8°" android:padding="12dp"/>
+                                        <TextView android:text="Ver Detalles" android:padding="12dp"/>
+                                    </TableRow>
+
+                                    <TableRow android:background="@android:color/white">
+                                        <TextView android:text="Miguel Ángel Torres" android:padding="12dp"/>
+                                        <TextView android:text="2348025" android:padding="12dp"/>
+                                        <TextView android:text="IIA" android:padding="12dp"/>
+                                        <TextView android:text="2°" android:padding="12dp"/>
+                                        <TextView android:text="Ver Detalles" android:padding="12dp"/>
+                                    </TableRow>
+
+                                    <TableRow android:background="#F8F8F8">
+                                        <TextView android:text="Sofía Hernández" android:padding="12dp"/>
+                                        <TextView android:text="2348044" android:padding="12dp"/>
+                                        <TextView android:text="ISC" android:padding="12dp"/>
+                                        <TextView android:text="7°" android:padding="12dp"/>
+                                        <TextView android:text="Ver Detalles" android:padding="12dp"/>
+                                    </TableRow>
+
+                                    <TableRow android:background="@android:color/white">
+                                        <TextView android:text="Diego Martínez" android:padding="12dp"/>
+                                        <TextView android:text="2348075" android:padding="12dp"/>
+                                        <TextView android:text="IER" android:padding="12dp"/>
+                                        <TextView android:text="5°" android:padding="12dp"/>
+                                        <TextView android:text="Ver Detalles" android:padding="12dp"/>
+                                    </TableRow>
+
+                                    <TableRow android:background="#F8F8F8">
+                                        <TextView android:text="Mariana Cruz" android:padding="12dp"/>
+                                        <TextView android:text="2348102" android:padding="12dp"/>
+                                        <TextView android:text="IEM" android:padding="12dp"/>
+                                        <TextView android:text="3°" android:padding="12dp"/>
+                                        <TextView android:text="Ver Detalles" android:padding="12dp"/>
+                                    </TableRow>
+
+                                    <TableRow android:background="@android:color/white">
+                                        <TextView android:text="Luis Pérez" android:padding="12dp"/>
+                                        <TextView android:text="2348120" android:padding="12dp"/>
+                                        <TextView android:text="IIA" android:padding="12dp"/>
+                                        <TextView android:text="9°" android:padding="12dp"/>
+                                        <TextView android:text="Ver Detalles" android:padding="12dp"/>
+                                    </TableRow>
+
+                                    <TableRow android:background="#F8F8F8">
+                                        <TextView android:text="Fernanda Jiménez" android:padding="12dp"/>
+                                        <TextView android:text="2348150" android:padding="12dp"/>
+                                        <TextView android:text="IER" android:padding="12dp"/>
+                                        <TextView android:text="1°" android:padding="12dp"/>
+                                        <TextView android:text="Ver Detalles" android:padding="12dp"/>
+                                    </TableRow>
+
+                                    <TableRow android:background="@android:color/white">
+                                        <TextView android:text="Ricardo Mendoza" android:padding="12dp"/>
+                                        <TextView android:text="2348188" android:padding="12dp"/>
+                                        <TextView android:text="ISC" android:padding="12dp"/>
+                                        <TextView android:text="10°" android:padding="12dp"/>
+                                        <TextView android:text="Ver Detalles" android:padding="12dp"/>
+                                    </TableRow>
+
+                                </TableLayout>
+                            </LinearLayout>
+                        </HorizontalScrollView>
+                    </ScrollView>
+                </androidx.cardview.widget.CardView>
+
+                <!-- BOTÓN IMPRIMIR -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#F8F8F8"
+                        android:orientation="vertical"
+                        android:padding="24dp"
+                        android:gravity="center">
+
+                        <Button
+                            android:id="@+id/btnImprimir"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Imprimir"
+                            android:textColor="@android:color/white"
+                            android:background="@drawable/rounded_button_orange"
+                            android:padding="12dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- PIE DE PÁGINA -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/contenedorPie"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000080"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#169; 2025 Instituto Tecnológico del Valle de Etla. Todos los derechos reservados."
+                android:textColor="@android:color/white"
+                android:textSize="10sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
