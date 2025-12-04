@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.example.plataforma_extraescolares.R
+import com.example.plataforma_extraescolares.databinding.FragmentHomeCoordinadorSmtBinding
 
 class HomeCoordinadorSMTFragment : Fragment(){
 

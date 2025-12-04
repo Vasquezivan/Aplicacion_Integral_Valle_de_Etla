@@ -8,14 +8,14 @@
     android:layout_height="match_parent"
     tools:context=".Union_Hidalgo">
 
-    <!-- Contenedor principal -->
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- Toolbar -->
+
         <include
-            android:id="@+id/appBarCoordinadorUh"
+            android:id="@+id/appBarCoordinadoruh"
             layout="@layout/app_bar_coordinador_uh" />
 
         <!-- NavHostFragment -->

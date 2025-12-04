@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F2F2F2">
@@ -10,7 +9,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- ENCABEZADO CON LOGOS -->
+        <!-- ENCABEZADO -->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="120dp"
@@ -43,7 +42,7 @@
 
         </RelativeLayout>
 
-        <!-- BARRA AZUL - TITULO CENTRO -->
+        <!-- BARRA AZUL -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="55dp"
@@ -54,13 +53,13 @@
             android:textColor="@android:color/white"
             android:textStyle="bold" />
 
-        <!-- TITULO ACTIVIDAD -->
+        <!-- TITULO -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Atletismo"
             android:textStyle="bold"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:textColor="#061B82"
             android:gravity="center"
             android:layout_marginTop="15dp" />
@@ -82,7 +81,7 @@
             android:textSize="14sp"
             android:gravity="center" />
 
-        <!-- BARRA DE SECCIÓN -->
+        <!-- BARRA DE OPCIONES -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="55dp"
@@ -99,433 +98,122 @@
                 android:text="Estudiantes Registrados"
                 android:textStyle="bold"
                 android:textColor="#061B82"
-                android:textSize="14sp"
-                android:paddingStart="15dp" />
+                android:textSize="14sp" />
 
+            <Button
+                android:id="@+id/btnAgregar"
+                android:layout_width="110dp"
+                android:layout_height="45dp"
+                android:text="Agregar"
+                android:textColor="@android:color/white"
+                android:backgroundTint="#2196F3"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <!-- BUSCADOR -->
-        <LinearLayout
+        <EditText
+            android:id="@+id/etBuscar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
-
-            <EditText
-                android:id="@+id/etBuscar"
-                android:layout_width="0dp"
-                android:layout_height="45dp"
-                android:layout_weight="1"
-                android:hint="Buscar Estudiante"
-                android:padding="12dp"
-                android:background="@android:drawable/editbox_background"
-                android:drawableStart="@android:drawable/ic_menu_search" />
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@android:drawable/ic_menu_sort_by_size"
-                android:layout_marginStart="10dp"
-                android:tint="#061B82" />
-        </LinearLayout>
+            android:layout_height="45dp"
+            android:layout_margin="15dp"
+            android:hint="Buscar Estudiante"
+            android:padding="12dp"
+            android:drawableStart="@android:drawable/ic_menu_search" />
 
         <!-- ENCABEZADO TABLA -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:background="#061B82"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingHorizontal="10dp">
+            android:padding="10dp"
+            android:orientation="horizontal">
 
-            <!-- Checkbox Header -->
-            <TextView
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
-                android:text="✓"
-                android:textColor="@android:color/white"
-                android:gravity="center" />
-
-            <!-- Nombre -->
             <TextView
                 android:text="Nombre del Estudiante"
                 android:textColor="@android:color/white"
-                android:textStyle="bold"
-                android:layout_weight="1.8"
+                android:layout_weight="2"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:paddingStart="5dp" />
+                android:layout_height="wrap_content" />
 
-            <!-- No Control -->
             <TextView
                 android:text="No Control"
                 android:textColor="@android:color/white"
-                android:textStyle="bold"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
 
-            <!-- Carrera -->
             <TextView
                 android:text="Carrera"
                 android:textColor="@android:color/white"
-                android:textStyle="bold"
-                android:layout_weight="0.8"
+                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
 
-            <!-- Semestre -->
             <TextView
                 android:text="Semestre"
                 android:textColor="@android:color/white"
-                android:textStyle="bold"
-                android:layout_weight="0.8"
+                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
 
-            <!-- Acción -->
             <TextView
                 android:text="Acción"
                 android:textColor="@android:color/white"
-                android:textStyle="bold"
-                android:layout_weight="1.5"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
         </LinearLayout>
 
-        <!-- ESTUDIANTE 1: Laura Gonzalez -->
+        <!-- ALUMNO EJEMPLO -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="60dp"
             android:orientation="horizontal"
-            android:paddingHorizontal="10dp"
+            android:padding="10dp"
             android:gravity="center_vertical"
-            android:background="@android:color/white"
-            android:layout_marginBottom="1dp"
-            android:elevation="1dp">
+            android:background="#FFFFFF">
 
-            <!-- Checkbox -->
             <CheckBox
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
-                android:gravity="center" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
-            <!-- Nombre -->
             <TextView
-                android:text="Laura Gonzalez"
-                android:textSize="14sp"
-                android:layout_weight="1.8"
+                android:text="Laura González"
+                android:layout_weight="2"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:paddingStart="5dp"
-                android:textColor="#333333" />
+                android:layout_height="wrap_content" />
 
-            <!-- No Control -->
             <TextView
                 android:text="2347842"
-                android:textSize="14sp"
                 android:layout_weight="1"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:textColor="#333333" />
+                android:layout_height="wrap_content" />
 
-            <!-- Carrera -->
             <TextView
-                android:text="1ºC"
-                android:textSize="14sp"
-                android:layout_weight="0.8"
+                android:text="ISC"
+                android:layout_weight="1"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:textColor="#333333" />
+                android:layout_height="wrap_content" />
 
-            <!-- Semestre -->
             <TextView
                 android:text="Sexto"
-                android:textSize="14sp"
-                android:layout_weight="0.8"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:textColor="#333333" />
-
-            <!-- BOTONES DE ACCIÓN -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.5"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:padding="2dp">
-
-                <!-- Botón Evaluar -->
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:text="Evaluar"
-                    android:textSize="12sp"
-                    android:backgroundTint="#2196F3"
-                    android:textColor="@android:color/white"
-                    android:textStyle="bold"
-                    android:paddingHorizontal="8dp"
-                    android:layout_marginEnd="3dp" />
-
-                <!-- Botón Editar -->
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:text="Editar"
-                    android:textSize="12sp"
-                    android:backgroundTint="#FF9800"
-                    android:textColor="@android:color/white"
-                    android:textStyle="bold"
-                    android:paddingHorizontal="8dp"
-                    android:layout_marginHorizontal="3dp" />
-
-                <!-- Botón Eliminar -->
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:text="Eliminar"
-                    android:textSize="12sp"
-                    android:backgroundTint="#F44336"
-                    android:textColor="@android:color/white"
-                    android:textStyle="bold"
-                    android:paddingHorizontal="8dp"
-                    android:layout_marginStart="3dp" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <!-- ESTUDIANTE 2: Alan Gonzales -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:orientation="horizontal"
-            android:paddingHorizontal="10dp"
-            android:gravity="center_vertical"
-            android:background="@android:color/white"
-            android:layout_marginBottom="1dp"
-            android:elevation="1dp">
-
-            <CheckBox
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
-                android:gravity="center" />
-
-            <TextView
-                android:text="Alan Gonzales"
-                android:textSize="14sp"
-                android:layout_weight="1.8"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:paddingStart="5dp"
-                android:textColor="#333333" />
-
-            <TextView
-                android:text="2236758"
-                android:textSize="14sp"
                 android:layout_weight="1"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:textColor="#333333" />
-
-            <TextView
-                android:text="IDC"
-                android:textSize="14sp"
-                android:layout_weight="0.8"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:textColor="#333333" />
-
-            <TextView
-                android:text="segundo"
-                android:textSize="14sp"
-                android:layout_weight="0.8"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:textColor="#333333" />
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.5"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:padding="2dp">
-
-                <!-- Este ya está Evaluado -->
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:text="Evaluado"
-                    android:textSize="12sp"
-                    android:backgroundTint="#4CAF50"
-                    android:textColor="@android:color/white"
-                    android:textStyle="bold"
-                    android:paddingHorizontal="8dp"
-                    android:layout_marginEnd="3dp" />
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:text="Editar"
-                    android:textSize="12sp"
-                    android:backgroundTint="#FF9800"
-                    android:textColor="@android:color/white"
-                    android:textStyle="bold"
-                    android:paddingHorizontal="8dp"
-                    android:layout_marginHorizontal="3dp" />
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:text="Eliminar"
-                    android:textSize="12sp"
-                    android:backgroundTint="#F44336"
-                    android:textColor="@android:color/white"
-                    android:textStyle="bold"
-                    android:paddingHorizontal="8dp"
-                    android:layout_marginStart="3dp" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <!-- ESTUDIANTE 3: Dafne Allen -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:orientation="horizontal"
-            android:paddingHorizontal="10dp"
-            android:gravity="center_vertical"
-            android:background="@android:color/white"
-            android:layout_marginBottom="1dp"
-            android:elevation="1dp">
-
-            <CheckBox
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
-                android:gravity="center" />
-
-            <TextView
-                android:text="Dafne Allen"
-                android:textSize="14sp"
-                android:layout_weight="1.8"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:paddingStart="5dp"
-                android:textColor="#333333" />
-
-            <TextView
-                android:text="5427565"
-                android:textSize="14sp"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:textColor="#333333" />
-
-            <TextView
-                android:text="LGA S"
-                android:textSize="14sp"
-                android:layout_weight="0.8"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:textColor="#333333" />
-
-            <TextView
-                android:text="Primero"
-                android:textSize="14sp"
-                android:layout_weight="0.8"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:textColor="#333333" />
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.5"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:padding="2dp">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:text="Evaluar"
-                    android:textSize="12sp"
-                    android:backgroundTint="#2196F3"
-                    android:textColor="@android:color/white"
-                    android:textStyle="bold"
-                    android:paddingHorizontal="8dp"
-                    android:layout_marginEnd="3dp" />
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:text="Editar"
-                    android:textSize="12sp"
-                    android:backgroundTint="#FF9800"
-                    android:textColor="@android:color/white"
-                    android:textStyle="bold"
-                    android:paddingHorizontal="8dp"
-                    android:layout_marginHorizontal="3dp" />
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:text="Eliminar"
-                    android:textSize="12sp"
-                    android:backgroundTint="#F44336"
-                    android:textColor="@android:color/white"
-                    android:textStyle="bold"
-                    android:paddingHorizontal="8dp"
-                    android:layout_marginStart="3dp" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <!-- BOTONES DE ACCIÓN GLOBALES -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:background="#FFFFFF"
-            android:layout_marginTop="10dp"
-            android:padding="10dp">
+                android:layout_height="wrap_content" />
 
             <Button
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:text="Seleccionar Todos"
-                android:textSize="14sp"
-                android:backgroundTint="#061B82"
+                android:id="@+id/btnEvaluar"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:text="Evaluar"
+                android:backgroundTint="#2196F3"
                 android:textColor="@android:color/white"
-                android:textStyle="bold"
-                android:layout_marginEnd="5dp" />
+                android:textStyle="bold" />
 
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:text="Generar Reporte"
-                android:textSize="14sp"
-                android:backgroundTint="#4CAF50"
-                android:textColor="@android:color/white"
-                android:textStyle="bold"
-                android:layout_marginHorizontal="5dp" />
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:text="Agregar Estudiante"
-                android:textSize="14sp"
-                android:backgroundTint="#9C27B0"
-                android:textColor="@android:color/white"
-                android:textStyle="bold"
-                android:layout_marginStart="5dp" />
         </LinearLayout>
 
-        <!-- PIE DE PÁGINA -->
+        <!-- PIE -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -533,8 +221,8 @@
             android:text="© 2025 Instituto Tecnológico del Valle de Etla. Todos los derechos reservados."
             android:textColor="@android:color/white"
             android:background="#061B82"
-            android:textSize="11sp"
-            android:layout_marginTop="10dp" />
+            android:textSize="11sp" />
 
     </LinearLayout>
+
 </ScrollView>
