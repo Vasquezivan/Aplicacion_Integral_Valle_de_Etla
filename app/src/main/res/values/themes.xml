@@ -1,25 +1,35 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+
+    <!-- Tema principal sin ActionBar ni barra blanca -->
     <style name="Theme.Plataforma_Extraescolares" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+
+        <!-- Colores transparentes para que NO aparezca barra fea -->
+        <item name="colorPrimary">@android:color/transparent</item>
+        <item name="colorPrimaryVariant">@android:color/transparent</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+
+        <!-- Barra de estado transparente -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+
+        <!-- Íconos blancos (NO activa fondo blanco) -->
+        <item name="android:windowLightStatusBar">false</item>
+
+        <!-- Secundarios transparentes también -->
+        <item name="colorSecondary">@android:color/transparent</item>
+        <item name="colorSecondaryVariant">@android:color/transparent</item>
+        <item name="colorOnSecondary">@android:color/white</item>
     </style>
 
+    <!-- Garantizamos que NO exista ActionBar -->
     <style name="Theme.Plataforma_Extraescolares.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.Plataforma_Extraescolares.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.Plataforma_Extraescolares.AppBarOverlay"
+        parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="Theme.Plataforma_Extraescolares.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.Plataforma_Extraescolares.PopupOverlay"
+        parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>
