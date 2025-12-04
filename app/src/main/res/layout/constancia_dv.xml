@@ -47,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:background="#061B82"
-            android:text="Centro de Investigación y Desarrollo de Energías Renovables en Unión Hidalgo"
+            android:text="Centro de Investigación y Desarrollo de Energías Renovables en Demetrio Vallejo"
             android:gravity="center"
             android:textSize="14sp"
             android:textColor="@android:color/white"

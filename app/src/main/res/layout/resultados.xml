@@ -84,7 +84,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:text="Centro de Investigación y Desarrollo de Energías\nRenovables en Unión Hidalgo"
+                        android:text="Centro de Investigación y Desarrollo de Energías\nRenovables en Valle de Etla"
                         android:textColor="@android:color/white"
                         android:textSize="12sp"
                         android:textStyle="bold"/>
