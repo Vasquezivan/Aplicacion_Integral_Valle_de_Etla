@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- ENCABEZADO (LO DEJAS IGUAL) -->
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
@@ -89,7 +89,7 @@
                         android:layout_height="wrap_content"/>
 
                     <TextView
-                        android:text="Centro de Investigación y Desarrollo de Energías Renovables en Unión Hidalgo"
+                        android:text="Centro de Investigación y Desarrollo de Energías Renovables en Demetrio Vallejo"
                         android:textColor="@android:color/white"
                         android:textSize="12sp"
                         android:gravity="center"
@@ -123,7 +123,7 @@
                         android:layout_height="wrap_content"/>
 
                     <TextView
-                        android:text="Unidad Académica Unión Hidalgo"
+                        android:text="Unidad Académica Demetrio Vallejo"
                         android:textColor="#e0e0e0"
                         android:textSize="15sp"
                         android:gravity="center"
@@ -142,7 +142,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- TARJETAS DE ESTADÍSTICAS -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -155,7 +155,7 @@
                     android:orientation="horizontal"
                     android:weightSum="2">
 
-                    <!-- Estudiantes registrados -->
+
                     <androidx.cardview.widget.CardView
                         android:layout_width="0dp"
                         android:layout_height="90dp"
@@ -191,7 +191,7 @@
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
-                    <!-- Actividades activas -->
+
                     <androidx.cardview.widget.CardView
                         android:layout_width="0dp"
                         android:layout_height="90dp"
@@ -235,7 +235,7 @@
                     android:orientation="horizontal"
                     android:weightSum="2">
 
-                    <!-- Constancias -->
+
                     <androidx.cardview.widget.CardView
                         android:layout_width="0dp"
                         android:layout_height="90dp"
@@ -271,7 +271,6 @@
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
-                    <!-- Participación -->
                     <androidx.cardview.widget.CardView
                         android:layout_width="0dp"
                         android:layout_height="90dp"
@@ -309,7 +308,7 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- SECCIÓN DE ACTIVIDADES -->
+
             <TextView
                 android:text="Actividades y Estudiantes"
                 android:textSize="18sp"

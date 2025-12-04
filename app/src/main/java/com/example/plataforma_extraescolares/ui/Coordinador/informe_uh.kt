@@ -17,7 +17,7 @@ class informe_uh  : Fragment(){
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
         ): View? {
-            val view = inflater.inflate(R.layout.fragment_informe, container, false)
+            val view = inflater.inflate(R.layout.fragment_informe_uh, container, false)
 
             val btnVerInforme: Button = view.findViewById(R.id.btnVerInforme)
             btnVerInforme.setOnClickListener {

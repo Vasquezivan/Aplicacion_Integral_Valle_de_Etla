@@ -26,7 +26,7 @@ class vestudiantes_uh : Fragment(){
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
         ): View? {
-            val view = inflater.inflate(R.layout.vestudiantes, container, false)
+            val view = inflater.inflate(R.layout.vestudiantes_uh, container, false)
 
             etBuscar = view.findViewById(R.id.etBuscar)
             tablaEstudiantes = view.findViewById(R.id.tablaEstudiantes)

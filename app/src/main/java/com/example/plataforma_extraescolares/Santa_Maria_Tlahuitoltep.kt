@@ -29,7 +29,7 @@ class Santa_Maria_Tlahuitoltep : AppCompatActivity(){
             setContentView(binding.root)
 
             // Configurar Toolbar
-            setSupportActionBar(binding.appBarCoordinadorSmt.toolbar)
+            setSupportActionBar(binding.appBarCoordinadorsmt.toolbar)
 
             // Obtener NavController correctamente
             val navHostFragment = supportFragmentManager
@@ -41,10 +41,10 @@ class Santa_Maria_Tlahuitoltep : AppCompatActivity(){
             appBarConfiguration = AppBarConfiguration(
                 setOf(
                     R.id.nav_home,
-                    R.id.nav_vestudiantes_uh,
-                    R.id.nav_constancias_uh,
-                    R.id.nav_resultados_uh,
-                    R.id.nav_informe_uh
+                    R.id.nav_vestudiantes_smt,
+                    R.id.nav_constancias_smt,
+                    R.id.nav_resultados_smt,
+                    R.id.nav_informe_smt
                 ),
                 drawerLayout
             )
