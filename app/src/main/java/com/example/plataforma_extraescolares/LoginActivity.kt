@@ -78,7 +78,7 @@ class LoginActivity : AppCompatActivity() {
             else if (usuario == "coordinador_SMT" && password == "2220070") {
                 Toast.makeText(this, "Acceso como Coordinador", Toast.LENGTH_SHORT).show()
 
-                val intent = Intent(this, CoordinadorActivity::class.java)
+                val intent = Intent(this, Santa_Maria_Tlahuitoltep::class.java)
                 startActivity(intent)
                 finish()
 
@@ -87,7 +87,7 @@ class LoginActivity : AppCompatActivity() {
             else if (usuario == "coordinador_UH" && password == "2220071") {
                 Toast.makeText(this, "Acceso como Coordinador", Toast.LENGTH_SHORT).show()
 
-                val intent = Intent(this, CoordinadorActivity::class.java)
+                val intent = Intent(this, Union_Hidalgo::class.java)
                 startActivity(intent)
                 finish()
 
