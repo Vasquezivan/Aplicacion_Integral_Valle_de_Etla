@@ -20,7 +20,7 @@ class contancia_uh : Fragment(){
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
         ): View? {
-            return inflater.inflate(R.layout.constancia_dv, container, false)
+            return inflater.inflate(R.layout.constancia_uh, container, false)
         }
 
         override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
