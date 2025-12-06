@@ -14,14 +14,6 @@
         android:background="@android:color/transparent"
         app:elevation="0dp">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@android:color/transparent"
-            app:title=""
-            app:popupTheme="@style/Theme.Plataforma_Extraescolares.PopupOverlay" />
-
     </com.google.android.material.appbar.AppBarLayout>
 
     <!-- Contenido principal -->
