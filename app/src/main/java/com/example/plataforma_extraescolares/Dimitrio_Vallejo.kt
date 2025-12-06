@@ -40,7 +40,7 @@ class Dimitrio_Vallejo : AppCompatActivity() {
                 R.id.nav_vestudiantes_dv,
                 R.id.nav_constancias_dv,
                 R.id.nav_resultados_dv,
-                R.id.nav_informe_dv
+
             ),
             drawerLayout
         )
@@ -55,7 +55,7 @@ class Dimitrio_Vallejo : AppCompatActivity() {
                 R.id.nav_vestudiantes_dv -> navController.navigate(R.id.nav_vestudiantes_dv)
                 R.id.nav_constancias_dv -> navController.navigate(R.id.nav_constancias_dv)
                 R.id.nav_resultados_dv -> navController.navigate(R.id.nav_resultados_dv)
-                R.id.nav_informe_dv -> navController.navigate(R.id.nav_informe_dv)
+
             }
             drawerLayout.closeDrawers()
             true

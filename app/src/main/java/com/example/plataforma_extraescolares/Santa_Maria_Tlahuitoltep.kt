@@ -41,10 +41,10 @@ class Santa_Maria_Tlahuitoltep : AppCompatActivity(){
             appBarConfiguration = AppBarConfiguration(
                 setOf(
                     R.id.nav_home,
-                    R.id.nav_vestudiantes_uh,
-                    R.id.nav_constancias_uh,
-                    R.id.nav_resultados_uh,
-                    R.id.nav_informe_uh
+                    R.id.nav_vestudiantes_smt,
+                    R.id.nav_constancias_smt,
+                    R.id.nav_resultados_smt,
+
                 ),
                 drawerLayout
             )
@@ -59,7 +59,7 @@ class Santa_Maria_Tlahuitoltep : AppCompatActivity(){
                     R.id.nav_vestudiantes_smt -> navController.navigate(R.id.nav_vestudiantes_smt)
                     R.id.nav_constancias_smt -> navController.navigate(R.id.nav_constancias_smt)
                     R.id.nav_resultados_smt -> navController.navigate(R.id.nav_resultados_smt)
-                    R.id.nav_informe_smt-> navController.navigate(R.id.nav_informe_smt)
+
                 }
                 drawerLayout.closeDrawers()
                 true
