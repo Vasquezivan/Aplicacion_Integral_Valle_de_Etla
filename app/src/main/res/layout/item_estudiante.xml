@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <CheckBox
+            android:id="@+id/checkEstudiante"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1" />
+
+        <TextView
+            android:id="@+id/nombreEstudiante"
+            android:layout_width="58dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.35"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            android:text="Nombre del Estudiante"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/controlEstudiante"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:gravity="center"
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+            android:text="No. Control"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/carreraEstudiante"
+            android:layout_width="88dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+            android:text="Carrera"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/semestreEstudiante"
+            android:layout_width="42dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:gravity="center"
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+            android:text="Sem."
+            android:textSize="11sp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+</LinearLayout>

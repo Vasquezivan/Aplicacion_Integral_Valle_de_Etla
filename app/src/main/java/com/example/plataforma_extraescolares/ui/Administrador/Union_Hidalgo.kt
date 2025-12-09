@@ -5,60 +5,78 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.plataforma_extraescolares.R
-import com.google.android.material.button.MaterialButton
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.plataforma_extraescolares.ApiClient
+import com.example.plataforma_extraescolares.ApiService
+import com.example.plataforma_extraescolares.adapters.ActividadAdapter
+import com.example.plataforma_extraescolares.databinding.FragmentUnionHidalgoBinding
+import com.example.plataforma_extraescolares.models.ActividadesResponse
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class Union_Hidalgo : Fragment() {
 
-    // Parámetros opcionales (puedes eliminarlos si no los usas)
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private var _binding: FragmentUnionHidalgoBinding? = null
+    private val binding get() = _binding!!
+    private lateinit var adapter: ActividadAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Cargar el diseño XML del fragmento
-        val view = inflater.inflate(R.layout.fragment_union__hidalgo, container, false)
-
-        // Referencia al botón desde el XML
-        val btnVisualizar = view.findViewById<MaterialButton>(R.id.btn_visualizar_estudiantes)
-
-        // Evento de clic en el botón
-        btnVisualizar.setOnClickListener {
-            // Crear un Intent para abrir la Activity Actividades_Union_Hidalgo
-            val intent = Intent(requireContext(), Actividades_Union_Hidalgo::class.java)
-
-            // Si quieres, puedes enviar datos (por ejemplo, la actividad seleccionada)
-            // intent.putExtra("actividad", "Basquetbol")
-
-            // Iniciar la nueva Activity
-            startActivity(intent)
-        }
-
-        return view
+    ): View {
+        _binding = FragmentUnionHidalgoBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        private const val ARG_PARAM1 = "param1"
-        private const val ARG_PARAM2 = "param2"
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Union_Hidalgo().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+        setupRecyclerView()
+        fetchActividades()
+    }
+
+    private fun setupRecyclerView() {
+        binding.recyclerViewActividadesUnionHidalgo.layoutManager = LinearLayoutManager(requireContext())
+        // 1. Inicializar el adaptador con la lógica de clic
+        adapter = ActividadAdapter(emptyList()) { actividad ->
+            val intent = Intent(requireContext(), Actividades_Union_Hidalgo::class.java)
+            intent.putExtra("ID_ACTIVIDAD", actividad.idActividad)
+            intent.putExtra("NOMBRE_ACTIVIDAD", actividad.nombre)
+            intent.putExtra("DESCRIPCION_ACTIVIDAD", actividad.descripcion)
+            startActivity(intent)
+        }
+        // 2. Asignar el adaptador al RecyclerView
+        binding.recyclerViewActividadesUnionHidalgo.adapter = adapter
+    }
+
+    private fun fetchActividades() {
+        val apiService = ApiClient.instance.create(ApiService::class.java)
+        apiService.getActividadesPorUnidad("Unión Hidalgo").enqueue(object : Callback<ActividadesResponse> {
+            override fun onResponse(call: Call<ActividadesResponse>, response: Response<ActividadesResponse>) {
+                if (response.isSuccessful) {
+                    val actividades = response.body()?.actividades ?: emptyList()
+                    if (actividades.isNotEmpty()) {
+                        // 3. Actualizar los datos del adaptador
+                        adapter.updateData(actividades)
+                    } else {
+                        Toast.makeText(requireContext(), "No hay actividades para mostrar.", Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    Toast.makeText(requireContext(), "Error al cargar las actividades. Código: ${response.code()}", Toast.LENGTH_SHORT).show()
                 }
             }
+
+            override fun onFailure(call: Call<ActividadesResponse>, t: Throwable) {
+                Toast.makeText(requireContext(), "Error de red: ${t.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

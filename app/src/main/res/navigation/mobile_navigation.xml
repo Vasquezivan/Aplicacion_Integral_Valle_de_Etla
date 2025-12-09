@@ -11,12 +11,15 @@
         android:label="Inicio"
         tools:layout="@layout/fragment_home" />
 
-
     <fragment
         android:id="@+id/nav_Unidad_Hidaldo"
         android:name="com.example.plataforma_extraescolares.ui.Administrador.Union_Hidalgo"
         android:label="Unión Hidalgo "
-        tools:layout="@layout/fragment_union__hidalgo" />
+        tools:layout="@layout/fragment_union__hidalgo" >
+        <action
+            android:id="@+id/action_nav_Unidad_Hidaldo_to_actividades_Union_Hidalgo"
+            app:destination="@id/actividades_Union_Hidalgo" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_Unidad_Demetrio"
@@ -41,5 +44,16 @@
         android:name="com.example.plataforma_extraescolares.ui.Administrador.GUsuariosFragment"
         android:label="@string/gestion_usuarios"
         tools:layout="@layout/fragment_g_usuarios" />
+
+    <!-- Destino para los detalles de la actividad -->
+    <fragment
+        android:id="@+id/actividades_Union_Hidalgo"
+        android:name="com.example.plataforma_extraescolares.ui.Administrador.Actividades_Union_Hidalgo"
+        android:label="Detalles de Actividad"
+        tools:layout="@layout/activity_actividades_union_hidalgo">
+        <argument
+            android:name="ID_ACTIVIDAD"
+            app:argType="integer" />
+    </fragment>
 
 </navigation>

@@ -7,6 +7,11 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.plataforma_extraescolares.models.LoginRequest
+import com.example.plataforma_extraescolares.models.LoginResponse
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
 
@@ -48,54 +53,77 @@ class LoginActivity : AppCompatActivity() {
             val usuario = etUsuario.text.toString().trim()
             val password = etPassword.text.toString().trim()
 
-            // VALIDACIÓN DE ADMIN
-            if (usuario == "admin" && password == "1234") {
-                Toast.makeText(this, "Acceso correcto (Admin)", Toast.LENGTH_SHORT).show()
-
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-                finish()
-
-                // VALIDACIÓN DE COORDINADOR
-            } else if (usuario == "coordinador_VDE" && password == "5678") {
-                Toast.makeText(this, "Acceso como Coordinador", Toast.LENGTH_SHORT).show()
-
-                val intent = Intent(this, CoordinadorActivity::class.java)
-                startActivity(intent)
-                finish()
-
-                // CUALQUIER OTRO USUARIO ES INCORRECTO
+            if (usuario.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "Por favor, ingresa usuario y contraseña", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
             }
-            else if (usuario == "coordinador_DV" && password == "2220075") {
-                Toast.makeText(this, "Acceso como Coordinador", Toast.LENGTH_SHORT).show()
 
-                val intent = Intent(this, Dimitrio_Vallejo::class.java)
-                startActivity(intent)
-                finish()
+            val authService = ApiClient.authService
+            val loginRequest = LoginRequest(usuario, password)
 
+            authService.login(loginRequest).enqueue(object : Callback<LoginResponse> {
+                override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
+                    if (response.isSuccessful) {
+                        val loginResponse = response.body()
+                        if (loginResponse != null) {
+                            TokenStorage.saveToken(loginResponse.token)
+                            Toast.makeText(this@LoginActivity, "Acceso correcto", Toast.LENGTH_SHORT).show()
 
-            }
-            else if (usuario == "coordinador_SMT" && password == "2220070") {
-                Toast.makeText(this, "Acceso como Coordinador", Toast.LENGTH_SHORT).show()
+                            val user = loginResponse.user
+                            var roleRecognized = true
 
-                val intent = Intent(this, Santa_Maria_Tlahuitoltep::class.java)
-                startActivity(intent)
-                finish()
+                            // Redirigir según el rol y la unidad académica del usuario
+                            if (user.rol.equals("Administrador", ignoreCase = true)) {
+                                val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                                startActivity(intent)
+                                finish()
+                            } else if (user.rol.equals("Coordinador", ignoreCase = true)) {
+                                val unidadAcademica = user.unidadAcademica?.trim() ?: ""
+                                when {
+                                    unidadAcademica.equals("Unidad académica Tlahuitoltepec", ignoreCase = true) -> {
+                                        val intent = Intent(this@LoginActivity, Santa_Maria_Tlahuitoltep::class.java)
+                                        startActivity(intent)
+                                        finish()
+                                    }
+                                    unidadAcademica.equals("CIDERS unión Hidalgo", ignoreCase = true) -> {
+                                        val intent = Intent(this@LoginActivity, Union_Hidalgo::class.java)
+                                        startActivity(intent)
+                                        finish()
+                                    }
+                                    unidadAcademica.equals("Unidad Demetrio Vallejo en el Espinal", ignoreCase = true) -> {
+                                        val intent = Intent(this@LoginActivity, Dimitrio_Vallejo::class.java)
+                                        startActivity(intent)
+                                        finish()
+                                    }
+                                    unidadAcademica.equals("Valle de Etla", ignoreCase = true) -> {
+                                        val intent = Intent(this@LoginActivity, CoordinadorActivity::class.java)
+                                        startActivity(intent)
+                                        finish()
+                                    }
+                                    else -> {
+                                        roleRecognized = false
+                                        Toast.makeText(this@LoginActivity, "Unidad académica no reconocida: '${user.unidadAcademica}'", Toast.LENGTH_LONG).show()
+                                    }
+                                }
+                            } else {
+                                roleRecognized = false
+                                Toast.makeText(this@LoginActivity, "Rol no reconocido: '${user.rol}'", Toast.LENGTH_LONG).show()
+                            }
 
+                        } else {
+                            Toast.makeText(this@LoginActivity, "Respuesta de inicio de sesión nula", Toast.LENGTH_SHORT).show()
+                        }
+                    } else {
+                        // Manejar error de inicio de sesión (ej. credenciales incorrectas)
+                        Toast.makeText(this@LoginActivity, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show()
+                    }
+                }
 
-            }
-            else if (usuario == "coordinador_UH" && password == "2220071") {
-                Toast.makeText(this, "Acceso como Coordinador", Toast.LENGTH_SHORT).show()
-
-                val intent = Intent(this, Union_Hidalgo::class.java)
-                startActivity(intent)
-                finish()
-
-
-            }
-            else {
-                Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show()
-            }
+                override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+                    // Manejar error de red
+                    Toast.makeText(this@LoginActivity, "Error de red: ${t.message}", Toast.LENGTH_SHORT).show()
+                }
+            })
         }
     }
 }
