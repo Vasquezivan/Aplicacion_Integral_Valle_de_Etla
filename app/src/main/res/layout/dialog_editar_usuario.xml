@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:padding="16dp">
 
-            <!-- BARRA DE TÍTULO NARANJA - SIN CAMBIOS -->
+            <!-- BARRA DE TÍTULO NARANJA -->
             <TextView
                 android:id="@+id/dialogTitle"
                 android:layout_width="0dp"
@@ -148,35 +148,6 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!-- CAMPO PARA CONTACTO -->
-            <TextView
-                android:id="@+id/labelContacto"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="8dp"
-                android:text="Contacto"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/passwordContainer" />
-
-            <EditText
-                android:id="@+id/editTextContacto"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:hint="953 456 7865"
-                android:inputType="phone"
-                android:textSize="15dp"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:background="@drawable/bg_input_gray"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/labelContacto" />
-
             <!-- CAMPO PARA ROL (LISTA DESPLEGABLE) - AL FINAL -->
             <TextView
                 android:id="@+id/labelRol"
@@ -187,7 +158,7 @@
                 android:text="Rol"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextContacto" />
+                app:layout_constraintTop_toBottomOf="@+id/passwordContainer" />
 
             <androidx.appcompat.widget.AppCompatSpinner
                 android:id="@+id/spinnerRol"

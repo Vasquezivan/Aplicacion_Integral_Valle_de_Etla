@@ -131,272 +131,128 @@
     <!-- TARJETA CON LA LISTA DE ESTUDIANTES -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardEstudiante"
-        android:layout_width="336dp"
-        android:layout_height="341dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="360dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         app:cardCornerRadius="12dp"
         app:cardElevation="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/contenedorPie"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.775">
+        app:layout_constraintTop_toBottomOf="@id/subtituloActividad">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="355dp"
-            android:background="@drawable/card_background_sombra">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/card_background_sombra"
+            android:orientation="vertical">
 
-            <!-- CABECERA DE LA TABLA -->
-            <View
+            <!-- ===== CABECERA DE LA TABLA (LinearLayout) ===== -->
+            <LinearLayout
                 android:id="@+id/barraAzul"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/barra_azul_redondeada"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <!-- Líneas guía para las columnas -->
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline_start_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_begin="32dp" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline_start_control"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_end="208dp" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline_start_carrera"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_begin="207dp" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline_start_semestre"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_begin="267dp" />
-
-            <!-- Títulos de la cabecera -->
-            <TextView
-                android:id="@+id/headerNombre"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Nombre"
-                android:textColor="@android:color/white"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/barraAzul"
-                app:layout_constraintEnd_toStartOf="@+id/guideline_start_control"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/guideline_start_name"
-                app:layout_constraintTop_toTopOf="@+id/barraAzul" />
-            <TextView
-                android:id="@+id/headerNoControl"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="No. Control"
-                android:textColor="@android:color/white"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/barraAzul"
-                app:layout_constraintEnd_toStartOf="@+id/guideline_start_carrera"
-                app:layout_constraintStart_toEndOf="@+id/guideline_start_control"
-                app:layout_constraintTop_toTopOf="@+id/barraAzul" />
-            <TextView
-                android:id="@+id/headerCarrera"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Carrera"
-                android:textColor="@android:color/white"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/barraAzul"
-                app:layout_constraintEnd_toStartOf="@+id/guideline_start_semestre"
-                app:layout_constraintStart_toEndOf="@+id/guideline_start_carrera"
-                app:layout_constraintTop_toTopOf="@+id/barraAzul" />
-            <TextView
-                android:id="@+id/headerSemestre"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Semestre"
-                android:textColor="@android:color/white"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/barraAzul"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/guideline_start_semestre"
-                app:layout_constraintTop_toTopOf="@+id/barraAzul" />
-
-            <!-- FILA DE ESTUDIANTE 1 (Datos de ejemplo) -->
-            <CheckBox
-                android:id="@+id/checkEstudiante1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                app:layout_constraintEnd_toStartOf="@+id/guideline_start_name"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/barraAzul" />
-            <TextView
-                android:id="@+id/nombreEstudiante1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:paddingStart="4dp"
-                android:paddingEnd="4dp"
-                android:text="Luis Fernando Cruz"
-                android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="@+id/checkEstudiante1"
-                app:layout_constraintEnd_toStartOf="@+id/guideline_start_control"
-                app:layout_constraintStart_toEndOf="@+id/guideline_start_name"
-                app:layout_constraintTop_toTopOf="@+id/checkEstudiante1" />
-            <TextView
-                android:id="@+id/controlEstudiante1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="191E0555"
-                android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="@+id/checkEstudiante1"
-                app:layout_constraintEnd_toStartOf="@+id/guideline_start_carrera"
-                app:layout_constraintStart_toEndOf="@+id/guideline_start_control"
-                app:layout_constraintTop_toTopOf="@+id/checkEstudiante1" />
-            <TextView
-                android:id="@+id/carreraEstudiante1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="IGE"
-                android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="@+id/checkEstudiante1"
-                app:layout_constraintEnd_toStartOf="@+id/guideline_start_semestre"
-                app:layout_constraintStart_toEndOf="@+id/guideline_start_carrera"
-                app:layout_constraintTop_toTopOf="@+id/checkEstudiante1" />
-            <TextView
-                android:id="@+id/semestreEstudiante1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="9"
-                android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="@+id/checkEstudiante1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/guideline_start_semestre"
-                app:layout_constraintTop_toTopOf="@+id/checkEstudiante1" />
-            <View
-                android:id="@+id/divider1"
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_marginTop="8dp"
-                android:background="?android:attr/listDivider"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/checkEstudiante1" />
+                android:orientation="horizontal">
 
-            <!-- FILA DE ESTUDIANTE 2 (Datos de ejemplo) -->
-            <CheckBox
-                android:id="@+id/checkEstudiante2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                app:layout_constraintEnd_toStartOf="@+id/guideline_start_name"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/divider1" />
-            <TextView
-                android:id="@+id/nombreEstudiante2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:paddingStart="4dp"
-                android:paddingEnd="4dp"
-                android:text="Fernanda López Ortiz"
-                android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="@+id/checkEstudiante2"
-                app:layout_constraintEnd_toStartOf="@+id/guideline_start_control"
-                app:layout_constraintStart_toEndOf="@+id/guideline_start_name"
-                app:layout_constraintTop_toTopOf="@+id/checkEstudiante2" />
-            <TextView
-                android:id="@+id/controlEstudiante2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="231E0101"
-                android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="@+id/checkEstudiante2"
-                app:layout_constraintEnd_toStartOf="@+id/guideline_start_carrera"
-                app:layout_constraintStart_toEndOf="@+id/guideline_start_control"
-                app:layout_constraintTop_toTopOf="@+id/checkEstudiante2" />
-            <TextView
-                android:id="@+id/carreraEstudiante2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="ISC"
-                android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="@+id/checkEstudiante2"
-                app:layout_constraintEnd_toStartOf="@+id/guideline_start_semestre"
-                app:layout_constraintStart_toEndOf="@+id/guideline_start_carrera"
-                app:layout_constraintTop_toTopOf="@+id/checkEstudiante2" />
-            <TextView
-                android:id="@+id/semestreEstudiante2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="2"
-                android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="@+id/checkEstudiante2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/guideline_start_semestre"
-                app:layout_constraintTop_toTopOf="@+id/checkEstudiante2" />
-            <View
-                android:id="@+id/divider2"
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_marginTop="8dp"
-                android:background="?android:attr/listDivider"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/checkEstudiante2"/>
+                <View
+                    android:layout_width="49dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1" />
 
-            <!-- BOTONES DE ACCIÓN -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/botonEditar"
-                android:layout_width="110dp"
-                android:layout_height="38dp"
-                android:layout_marginEnd="8dp"
-                android:backgroundTint="#FFA500"
-                android:text="Editar"
-                android:textAllCaps="false"
-                android:textSize="10sp"
-                app:icon="@drawable/edit"
-                app:iconGravity="textStart"
-                app:iconSize="20dp"
-                app:iconTint="@android:color/black"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.917"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.949" />
+                <TextView
+                    android:id="@+id/headerNombre"
+                    android:layout_width="78dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.35"
+                    android:gravity="center_vertical|start"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:text="Nombre"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/headerNoControl"
+                    android:layout_width="82dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:gravity="center"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp"
+                    android:text="No. Control"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/headerCarrera"
+                    android:layout_width="57dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:gravity="center"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp"
+                    android:text="Carrera"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/headerSemestre"
+                    android:layout_width="79dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:gravity="center"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp"
+                    android:text="Semestre"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewEstudiantes"
+                android:layout_width="360dp"
+                android:layout_height="268dp"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/botonEditar"
+                    android:layout_width="110dp"
+                    android:layout_height="38dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:backgroundTint="#FFA500"
+                    android:text="Editar"
+                    android:textAllCaps="false"
+                    android:textSize="10sp"
+                    app:icon="@drawable/edit"
+                    app:iconGravity="textStart"
+                    app:iconSize="20dp"
+                    app:iconTint="@android:color/black" />
+            </LinearLayout>
+
+        </LinearLayout>
+
     </androidx.cardview.widget.CardView>
+
+
+
 
     <!-- PIE DE PÁGINA FIJO -->
     <FrameLayout

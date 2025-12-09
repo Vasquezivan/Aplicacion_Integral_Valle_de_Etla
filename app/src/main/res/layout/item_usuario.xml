@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp">
+
+    <!-- Líneas guía para las columnas -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.07" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start_unidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.55" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start_rol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <CheckBox
+        android:id="@+id/checkUsuario"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:scaleX="0.9"
+        android:scaleY="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_start_name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/nombreUsuario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Nombre Apellido"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@id/guideline_start_name"
+        app:layout_constraintEnd_toStartOf="@id/guideline_start_unidad"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/unidadUsuario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Unidad Académica"
+        android:textSize="10sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/guideline_start_unidad"
+        app:layout_constraintEnd_toStartOf="@id/guideline_start_password"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/passwordUsuario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="********"
+        android:textSize="10sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/guideline_start_password"
+        app:layout_constraintEnd_toStartOf="@id/guideline_start_rol"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/rolUsuario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Rol"
+        android:textSize="10sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/guideline_start_rol"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
